@@ -1,8 +1,14 @@
+import { ThemeProvider } from "styled-components";
+import MovieDetails from "./features/movie details";
+import { GlobalStyles } from "./GlobalStyle";
+import { theme } from "./theme";
+
 function App() {
   return (
-    <>
-    nana
-    </>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <MovieDetails />
+    </ThemeProvider>
   );
 }
 
