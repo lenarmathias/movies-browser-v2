@@ -26,7 +26,7 @@ export const MovieTile = styled.div`
     position: relative;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-        width: 288px;
+        min-width: 288px;
         height: 201px;
         display: grid;
         grid-template-columns: max-content 1fr;
