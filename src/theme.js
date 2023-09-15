@@ -12,5 +12,10 @@ export const theme = {
     yellow: "#FCD420",
     silver: "#C4C4C4", // img color when film isnt found
     lynch: "#627489", //magnifying glass color
+    boxShadow: "rgba(186, 199, 213, 0.50)",
+  },
+
+  breakpoints: {
+    mobile: "820px",
   },
 };
