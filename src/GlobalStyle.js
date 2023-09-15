@@ -13,6 +13,9 @@ html {
 
 body {
   background-color: ${({ theme }) => theme.color.bgLightGrey};
-  font-family: Poppins;
+  margin: 150px auto 103px;
+  width: 1368px;
+  max-width: 90%;
+  font-family: "Poppins", sans-serif;
 }
 `;
