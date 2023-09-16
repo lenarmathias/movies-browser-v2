@@ -89,47 +89,10 @@ export const MovieTitle = styled.h2`
     }
 `;
 
-export const SmallGreyText = styled.p`
-    color: ${({ theme }) => theme.color.darkerGrey};
-    margin: 0;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-        font-size: 13px;
-        line-height: 130%;
-    }
-`;
-
 export const GenresContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-`;
-
-export const GenreTile = styled.div`
-    height: 36px;
-    padding: 8px 16px;
-    display: flex;
-    align-items: center;
-    border-radius: 5px;
-    background-color: ${({ theme }) => theme.color.colorDivider};
-
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 140%;
-    color: ${({ theme }) => theme.color.black};
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-        height: 19px;
-        padding: 4px 8px;
-
-        font-size: 10px;
-        line-height: 110%;
-    }
 `;
 
 export const RatingContainer = styled.div`

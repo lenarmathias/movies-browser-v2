@@ -6,13 +6,12 @@ import {
     MissingMoviePosterIcon,
     MovieInfoContainer,
     MovieTitle,
-    SmallGreyText,
     GenresContainer,
-    GenreTile,
     RatingContainer,
     RatingStarIcon,
     RatingNumber,
 } from "./styled";
+import { SmallGreyText, SmallTile } from "../common/styled";
 
 const MoviesTiles = () => {
     return (
@@ -37,15 +36,15 @@ const MoviesTiles = () => {
                         <GenresContainer>
                             {/* place to implement .map to generate movie genres with GenreTile */}
                             {/* examples below */}
-                            <GenreTile>
+                            <SmallTile>
                                 Action
-                            </GenreTile>
-                            <GenreTile>
+                            </SmallTile>
+                            <SmallTile>
                                 Adventure
-                            </GenreTile>
-                            <GenreTile>
+                            </SmallTile>
+                            <SmallTile>
                                 Drama
-                            </GenreTile>
+                            </SmallTile>
                         </GenresContainer>
                         <RatingContainer>
                             <RatingStarIcon />
