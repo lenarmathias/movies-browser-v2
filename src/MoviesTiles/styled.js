@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { ReactComponent as MissingPosterIcon } from "../images/missingMoviePoster.svg";
 import { ReactComponent as StarIcon } from "../images/shape-star.svg";
 
@@ -14,6 +15,10 @@ export const MoviesTilesWrapper = styled.div`
         grid-template-columns: 1fr;
         grid-gap: 16px;
     }
+`;
+
+export const ContentLink = styled(Link)`
+    text-decoration: none;
 `;
 
 export const MovieTile = styled.div`
