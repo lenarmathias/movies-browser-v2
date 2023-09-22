@@ -5,7 +5,7 @@ import {
   fetchMoviesListError,
   fetchSearchMoviesLoad,
 } from "./movieListSlice";
-import { getGenres, getPopularMovies, getSearch } from "../getDataApi";
+import { getGenres, getPopularMovies, getSearch } from "../getData";
 
 function* getPopularMoviesHandler() {
   try {

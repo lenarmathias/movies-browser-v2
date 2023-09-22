@@ -5,7 +5,7 @@ import {
   fetchPeopleListError,
   fetchSearchPeopleLoad,
 } from "./peopleSlice";
-import { getPopularPeople, getSearchPeople } from "../getDataApi";
+import { getPopularPeople, getSearchPeople } from "../getData";
 
 function* getPopularPeopleHandler() {
   try {
