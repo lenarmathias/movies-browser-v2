@@ -2,6 +2,7 @@ import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import NavigationBar from "./NavigationBar";
 import MoviesTiles from "./MoviesTiles";
+import Pagination from "./Pagination";
 import MovieDetails from "./features/movie details";
 import { GlobalStyles } from "./GlobalStyle";
 import { theme } from "./theme";
@@ -22,6 +23,7 @@ function App() {
           </Route>
           <Route path="/movies">
             <MoviesTiles />
+            <Pagination />
           </Route>
           <Route path="/">
             <Redirect to="/movies" />
