@@ -5,6 +5,7 @@ import {
     MoviesTilesWrapper,
     ContentLink,
     MovieTile,
+    MoviePoster,
     MissingMoviePoster,
     MissingMoviePosterIcon,
     MovieInfoContainer,
@@ -19,6 +20,7 @@ import { SmallGreyText, SmallTile } from "../common/styled";
 const MoviesTiles = () => {
     const moviesPromise = useSelector(state => selectMoviesList(state));
     const [popularMovies, setPopularMovies] = useState([]);
+    const posterUrl = "https://image.tmdb.org/t/p/original";
 
     useEffect(() => {
         async function fetchPopularMovies() {
@@ -43,10 +45,17 @@ const MoviesTiles = () => {
             {popularMovies.map(movie => (
                 <MovieTile key={movie.id}>
                     <ContentLink to={"/movies/:id"}>
-                        {/* place for proper poster with condition: if missing, replace with below */}
-                        <MissingMoviePoster>
-                            <MissingMoviePosterIcon />
-                        </MissingMoviePoster>
+                        {movie.poster_path
+                            ?
+                            <MoviePoster
+                                src={posterUrl + movie.poster_path}
+                                alt="Movie Poster"
+                            />
+                            :
+                            <MissingMoviePoster as="div">
+                                <MissingMoviePosterIcon />
+                            </MissingMoviePoster>
+                        }
                     </ContentLink>
                     <MovieInfoContainer>
                         <ContentLink to={"/movies/:id"}>
@@ -73,11 +82,9 @@ const MoviesTiles = () => {
                         <RatingContainer>
                             <RatingStarIcon />
                             <RatingNumber>
-                                {/* example rating */}
                                 {movie.vote_average}
                             </RatingNumber>
                             <SmallGreyText>
-                                {/* example number of votes */}
                                 {movie.vote_count} votes
                             </SmallGreyText>
                         </RatingContainer>
