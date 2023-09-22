@@ -128,6 +128,8 @@ export const RatingNumber = styled.p`
     font-style: normal;
     font-weight: 600;
     line-height: 150%;
+    text-decoration: none;
+    color: ${({theme}) => theme.color.black};
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         font-size: 13px;

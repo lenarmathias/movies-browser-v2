@@ -1,3 +1,6 @@
+import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import { selectMoviesList } from "../features/MovieList/movieListSlice";
 import {
     MoviesTilesWrapper,
     ContentLink,
@@ -14,24 +17,45 @@ import {
 import { SmallGreyText, SmallTile } from "../common/styled";
 
 const MoviesTiles = () => {
+    const moviesPromise = useSelector(state => selectMoviesList(state));
+    const [popularMovies, setPopularMovies] = useState([]);
+
+    useEffect(() => {
+        async function fetchPopularMovies() {
+            try {
+                const movies = await moviesPromise;
+                setPopularMovies(movies.results);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        fetchPopularMovies();
+    }, [moviesPromise]);
+
+    const getReleaseYear = (releaseDate) => {
+        const dateParts = releaseDate.split("-");
+        return dateParts[0];
+    };
+
     return (
         <MoviesTilesWrapper>
-            {/* place to implement .map with api */}
-            <ContentLink to={"/movies/:id"}>
-                {/* linking tile to movie details */}
-                <MovieTile>
-                    {/* place for proper poster with condition: if missing, replace with below */}
-                    <MissingMoviePoster>
-                        <MissingMoviePosterIcon />
-                    </MissingMoviePoster>
+            {popularMovies.map(movie => (
+                <MovieTile key={movie.id}>
+                    <ContentLink to={"/movies/:id"}>
+                        {/* place for proper poster with condition: if missing, replace with below */}
+                        <MissingMoviePoster>
+                            <MissingMoviePosterIcon />
+                        </MissingMoviePoster>
+                    </ContentLink>
                     <MovieInfoContainer>
-                        <MovieTitle>
-                            {/* to be replaced with proper movie title from API */}
-                            Movie Title
-                        </MovieTitle>
+                        <ContentLink to={"/movies/:id"}>
+                            <MovieTitle>
+                                {movie.title}
+                            </MovieTitle>
+                        </ContentLink>
                         <SmallGreyText>
-                            {/* to be replaced with proper movie year from API */}
-                            2023
+                            {getReleaseYear(movie.release_date)}
                         </SmallGreyText>
                         <GenresContainer>
                             {/* place to implement .map to generate movie genres with GenreTile */}
@@ -50,16 +74,16 @@ const MoviesTiles = () => {
                             <RatingStarIcon />
                             <RatingNumber>
                                 {/* example rating */}
-                                8,7
+                                {movie.vote_average}
                             </RatingNumber>
                             <SmallGreyText>
                                 {/* example number of votes */}
-                                123 votes
+                                {movie.vote_count} votes
                             </SmallGreyText>
                         </RatingContainer>
                     </MovieInfoContainer>
                 </MovieTile>
-            </ContentLink>
+            ))};
         </MoviesTilesWrapper>
     )
 };
