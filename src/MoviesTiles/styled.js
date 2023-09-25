@@ -39,19 +39,23 @@ export const MovieTile = styled.div`
     }
 `;
 
-export const MissingMoviePoster = styled.div`
+export const MoviePoster = styled.img`
     width: 292px;
     height: 434px;
     border-radius: 5px;
-    background-color: ${({ theme }) => theme.color.silver};
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         width: 114px;
         height: 169px;
     }
+`;
+
+export const MissingMoviePoster = styled(MoviePoster)`
+    background-color: ${({ theme }) => theme.color.silver};
+    display: grid;
+    align-items: center;
+    justify-content: center;
 `;
 
 export const MissingMoviePosterIcon = styled(MissingPosterIcon)`
@@ -128,6 +132,8 @@ export const RatingNumber = styled.p`
     font-style: normal;
     font-weight: 600;
     line-height: 150%;
+    text-decoration: none;
+    color: ${({theme}) => theme.color.black};
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         font-size: 13px;

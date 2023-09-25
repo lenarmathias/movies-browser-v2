@@ -7,7 +7,7 @@ import {
   getMovieId,
   selectMovieId,
 } from "./movieDetailsSlice";
-import { getMovieCredits, getMovieDetails } from "../getDataApi";
+import { getMovieCredits, getMovieDetails } from "../getData";
 
 function* fetchMovieDetailsHandler() {
   try {

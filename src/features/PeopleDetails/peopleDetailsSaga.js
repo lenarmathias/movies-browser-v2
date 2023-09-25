@@ -5,7 +5,7 @@ import {
   getPersonId,
   selectPersonId,
 } from "./peopleDetailsSlice";
-import { getGenres, getPeopleDetails, getPeopleMovieCredits } from "../getDataApi";
+import { getGenres, getPeopleDetails, getPeopleMovieCredits } from "../getData";
 
 function* fetchPeopleDetailsHandler() {
   try {
