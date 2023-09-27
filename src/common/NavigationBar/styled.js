@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ReactComponent as Logo } from "../../images/logo.svg";
 import { ReactComponent as Search } from "../../images/searchIcon.svg";
 import { NavLink } from "react-router-dom";
@@ -113,6 +113,12 @@ export const StyledNavigationLink = styled(NavLink)`
     gap: 10px;
     border: 1px solid ${({ theme }) => theme.color.white};
     border-radius: 24px;
+
+    ${({ $pageButton }) =>
+      $pageButton &&
+      css`
+        border: none;
+      `}
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
