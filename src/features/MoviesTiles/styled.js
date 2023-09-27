@@ -22,15 +22,17 @@ export const ContentLink = styled(Link)`
 
 export const MovieTile = styled.div`
   width: 324px;
-  height: 650px;
+  min-height: 650px;
+  height: auto;
   padding: 16px;
   border-radius: 5px;
   background-color: ${({ theme }) => theme.breakpoints.mobile};
   box-shadow: 0px 4px 12px 0px ${boxShadowColor};
-  position: relative;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     min-width: 288px;
+    width: auto;
+    min-height: auto;
     height: 201px;
     display: grid;
     grid-template-columns: max-content 1fr;
@@ -67,7 +69,6 @@ export const MissingMoviePosterIcon = styled(MissingPosterIcon)`
 `;
 
 export const MovieInfoContainer = styled.div`
-  height: 100%;
   margin-top: 16px;
   display: grid;
   grid-template-rows: repeat(3, max-content);
@@ -99,16 +100,12 @@ export const GenresContainer = styled.div`
 
 export const RatingContainer = styled.div`
   height: 24px;
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
   display: grid;
   grid-template-columns: repeat(3, max-content);
   place-items: center;
   grid-gap: 12px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    position: static;
     height: 16px;
     grid-gap: 7px;
   }

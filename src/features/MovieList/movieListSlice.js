@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getPopularMovies } from "../getData";
+import { getPopularMovies, getGenres } from "../getData";
 
 const moviesListSlice = createSlice({
   name: "moviesList",
   initialState: {
     movies: getPopularMovies() || [],
-    genres: [],
+    genres: getGenres() || [],
     totalPages: 1,
     totalResults: "",
     status: "loading",
