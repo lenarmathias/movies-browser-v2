@@ -111,7 +111,7 @@ export const StyledNavigationLink = styled(NavLink)`
     padding: 8px 24px;
     align-items: center;
     gap: 10px;
-    border: 1px solid ${({ theme }) => theme.color.white};
+    border: ${({ noBorder }) => (noBorder ? "none" : "1px solid")};
     border-radius: 24px;
   }
 
