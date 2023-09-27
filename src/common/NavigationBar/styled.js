@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ReactComponent as Logo } from "../../images/logo.svg";
 import { ReactComponent as Search } from "../../images/searchIcon.svg";
 import { NavLink } from "react-router-dom";
@@ -111,8 +111,14 @@ export const StyledNavigationLink = styled(NavLink)`
     padding: 8px 24px;
     align-items: center;
     gap: 10px;
-    border: ${({ noBorder }) => (noBorder ? "none" : "1px solid")};
+    border: 1px solid ${({ theme }) => theme.color.white};
     border-radius: 24px;
+
+    ${({ $pageButton }) =>
+      $pageButton &&
+      css`
+        border: none;
+      `}
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {

@@ -16,7 +16,7 @@ const NavigationBar = () => (
   <NavigationBarContainer>
     <NavigationBarWrapper>
       <HeaderContainer>
-        <StyledNavigationLink to="/movies" noBorder>
+        <StyledNavigationLink to="/movies" $pageButton>
           <HeaderLogo />
           <Heading>Movies Browser</Heading>
         </StyledNavigationLink>
