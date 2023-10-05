@@ -97,13 +97,8 @@ export const Navigation = styled.nav`
 `;
 
 export const NavigationItem = styled.li`
-  width: 102px;
   list-style: none;
   text-align: center;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    width: 70px;
-  }
 `;
 
 export const LogoNavigationLink = styled(NavLink)`
