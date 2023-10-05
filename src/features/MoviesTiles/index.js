@@ -8,6 +8,7 @@ import {
     MoviePoster,
     MissingMoviePoster,
     MissingMoviePosterIcon,
+    SeparateFlexContainer,
     MovieInfoContainer,
     MovieTitle,
     GenresContainer,
@@ -68,29 +69,30 @@ const MoviesTiles = () => {
                             </MissingMoviePoster>
                         )}
                     </ContentLink>
-                    <MovieInfoContainer>
-                        <ContentLink to={`/movies/${movie.id}`}>
-                            <MovieTitle>{movie.title}</MovieTitle>
-                        </ContentLink>
-                        <SmallGreyText>{getReleaseYear(movie.release_date)}</SmallGreyText>
-                        <GenresContainer>
-                            {movie.genre_ids && (
-                                movie.genre_ids.map(genreId => (
-                                    <SmallTile key={genreId}>
-                                        {mapGenreIdToNames(genreId)}
-                                    </SmallTile>
-                                ))
-                            )}
-                        </GenresContainer>
+                    <SeparateFlexContainer>
+                        <MovieInfoContainer>
+                            <ContentLink to={`/movies/${movie.id}`}>
+                                <MovieTitle>{movie.title}</MovieTitle>
+                            </ContentLink>
+                            <SmallGreyText>{getReleaseYear(movie.release_date)}</SmallGreyText>
+                            <GenresContainer>
+                                {movie.genre_ids && (
+                                    movie.genre_ids.map(genreId => (
+                                        <SmallTile key={genreId}>
+                                            {mapGenreIdToNames(genreId)}
+                                        </SmallTile>
+                                    ))
+                                )}
+                            </GenresContainer>
+                        </MovieInfoContainer>
                         <RatingContainer>
                             <RatingStarIcon />
                             <RatingNumber>{movie.vote_average}</RatingNumber>
                             <SmallGreyText>{movie.vote_count} votes</SmallGreyText>
                         </RatingContainer>
-                    </MovieInfoContainer>
+                    </SeparateFlexContainer>
                 </MovieTile>
-            ))}
-            ;
+            ))};
         </MoviesTilesWrapper>
     );
 };

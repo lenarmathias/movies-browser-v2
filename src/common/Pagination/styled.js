@@ -9,7 +9,7 @@ export const PaginationContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     grid-gap: 8px;
     margin-top: 32px;
   }
@@ -20,7 +20,7 @@ export const PageButtonsContainer = styled.div`
   grid-template-columns: repeat(2, max-content);
   grid-gap: 12px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     grid-gap: 8px;
   }
 `;
@@ -41,7 +41,7 @@ export const PageVectorIcon = styled(VectorIcon)`
       display: none;
     `}
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     width: 5px;
     height: 8px;
 
@@ -58,7 +58,7 @@ export const ButtonContent = styled.div`
   align-items: center;
   gap: 8px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     grid-gap: 4px;
   }
 `;
@@ -66,7 +66,7 @@ export const ButtonContent = styled.div`
 export const MobileHide = styled.div`
   display: block;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     display: none;
   }
 `;
@@ -76,7 +76,7 @@ export const MiddleContainer = styled.div`
   grid-template-columns: repeat(4, max-content);
   grid-gap: 8px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     grid-gap: 2px;
   }
 `;
