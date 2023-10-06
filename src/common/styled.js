@@ -13,7 +13,7 @@ export const SmallGreyText = styled.p`
         color: ${({ theme }) => theme.color.black};
     `}
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
         font-size: 13px;
         line-height: 130%;
 
@@ -51,7 +51,7 @@ export const SmallTile = styled.div`
         }
     `}
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
         height: 19px;
         padding: 4px 8px;
 
