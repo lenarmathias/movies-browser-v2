@@ -1,6 +1,11 @@
-import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
-import { selectMoviesList, selectGenres } from "../MovieList/movieListSlice";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchMoviesListLoad } from "./movieListSlice";
+import {
+    selectMoviesList,
+    selectStatus,
+    selectGenres
+} from "./movieListSlice";
 import {
     MoviesTilesWrapper,
     MovieTile,
@@ -19,29 +24,19 @@ import { ContentLink } from "../../common/styled";
 import { SmallGreyText, SmallTile } from "../../common/styled";
 
 const MoviesTiles = () => {
-    const moviesPromise = useSelector((state) => selectMoviesList(state));
-    const [popularMovies, setPopularMovies] = useState([]);
-
-    const genresPromise = useSelector(state => selectGenres(state));
-    const [movieGenres, setMovieGenres] = useState([]);
-
-    const posterUrl = "https://image.tmdb.org/t/p/original";
+    const dispatch = useDispatch();
+    const status = useSelector(selectStatus);
 
     useEffect(() => {
-        async function fetchPopularMovies() {
-            try {
-                const movies = await moviesPromise;
-                setPopularMovies(movies.results);
-
-                const genres = await genresPromise;
-                setMovieGenres(genres);
-            } catch (error) {
-                console.error(error);
-            }
+        if (status !== "success") {
+            dispatch(fetchMoviesListLoad());
         }
+    }, [dispatch, status]);
 
-        fetchPopularMovies();
-    }, [moviesPromise, genresPromise]);
+    const moviesList = useSelector(selectMoviesList);
+    const movieGenres = useSelector(selectGenres);
+
+    const posterUrl = "https://image.tmdb.org/t/p/original";
 
     const getReleaseYear = (releaseDate) => {
         const dateParts = releaseDate.split("-");
@@ -55,7 +50,7 @@ const MoviesTiles = () => {
 
     return (
         <MoviesTilesWrapper>
-            {popularMovies.map((movie) => (
+            {moviesList.map((movie) => (
                 <MovieTile key={movie.id}>
                     <ContentLink to={`/movies/${movie.id}`}>
                         {movie.poster_path ? (
