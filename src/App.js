@@ -4,6 +4,7 @@ import NavigationBar from "./common/NavigationBar";
 import Section from "./common/Section";
 import MoviesTiles from "./features/MoviesTiles";
 import People from "./features/People";
+import Profile from "./features/Profile";
 import Pagination from "./common/Pagination";
 import MovieDetails from "./features/movie details";
 import { GlobalStyles } from "./GlobalStyle";
@@ -17,6 +18,9 @@ function App() {
         <NavigationBar />
 
         <Switch>
+          <Route path="/people/:id">
+            <Profile />
+          </Route>
           <Route path="/movies/:id">
             <MovieDetails />
           </Route>

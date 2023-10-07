@@ -15,8 +15,6 @@ const People = () => {
 
     const photoUrl = "https://image.tmdb.org/t/p/original";
 
-    console.log(popularPeople);
-
     useEffect(() => {
         async function fetchPopularPeople() {
             try {
