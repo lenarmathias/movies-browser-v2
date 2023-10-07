@@ -9,7 +9,9 @@ import { PeopleList } from "./styled";
 import {
     MovieDetailsPhotoTile,
     MovieDetailsActorsPhoto,
-    MovieDetailsActorsName
+    MovieDetailsActorsName,
+    MissingProfilePhoto,
+    MissingProfilePhotoIcon
 } from "../../common/styled";
 import { ContentLink } from "../../common/styled";
 
@@ -32,10 +34,16 @@ const People = () => {
             {popularPeople.map((person) => (
                 <MovieDetailsPhotoTile key={person.id}>
                     <ContentLink to={`/people/${person.id}`}>
-                        <MovieDetailsActorsPhoto
-                            src={photoUrl + person.profile_path}
-                            alt="Profile Photo"
-                        />
+                        {person.profile_path ? (
+                            <MovieDetailsActorsPhoto
+                                src={photoUrl + person.profile_path}
+                                alt="Profile Photo"
+                            />
+                        ) : (
+                            <MissingProfilePhoto as="div">
+                                <MissingProfilePhotoIcon />
+                            </MissingProfilePhoto>
+                        )}
                         <MovieDetailsActorsName>
                             {person.name}
                         </MovieDetailsActorsName>

@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
+import { ReactComponent as MissingPhotoIcon } from "../images/missingProfilePhotoIcon.svg";
 
 const boxShadowColor = ({ theme }) => theme.color.boxShadow;
 
@@ -94,6 +95,23 @@ export const MovieDetailsActorsPhoto = styled.img`
         width: 120px;
         height: 178px;
     }
+`;
+
+export const MissingProfilePhoto = styled(MovieDetailsActorsPhoto)`
+  background-color: ${({ theme }) => theme.color.silver};
+  display: grid;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const MissingProfilePhotoIcon = styled(MissingPhotoIcon)`
+  width: 120px;
+  height: 120px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+    width: 48px;
+    height: 48px;
+  }
 `;
 
 export const MovieDetailsActorsName = styled.p`
