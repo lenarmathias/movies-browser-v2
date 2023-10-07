@@ -1,10 +1,7 @@
 import {
-  MovieDetailsActorsName,
-  MovieDetailsActorsPhoto,
   MovieDetailsCharacter,
   MovieDetailsContainer,
   MovieDetailsDiv,
-  MovieDetailsPhotoTile,
   MovieDetailsRate,
   MovieDetailsRateScale,
   MovieDetailsRatesNumber,
@@ -15,6 +12,11 @@ import {
   MovieDetailsTileTittle,
   MovieDetailsTittle,
 } from "./styled";
+import {
+  MovieDetailsPhotoTile,
+  MovieDetailsActorsPhoto,
+  MovieDetailsActorsName
+} from "../../common/styled";
 import { ReactComponent as StarIcon } from "../../images/shape-star.svg";
 import actorsPhoto from "../../images/actorsPhoto.svg";
 

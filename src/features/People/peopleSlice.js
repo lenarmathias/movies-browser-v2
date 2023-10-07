@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getPopularPeople } from "../getData";
 
 const peopleListSlice = createSlice({
   name: "peopleList",
   initialState: {
-    people: [],
+    people: getPopularPeople() || [],
     totalPages: 0,
     totalResults: 1,
     status: "loading",

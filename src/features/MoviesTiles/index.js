@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import { selectMoviesList, selectGenres } from "../MovieList/movieListSlice";
 import {
     MoviesTilesWrapper,
-    ContentLink,
     MovieTile,
     MoviePoster,
     MissingMoviePoster,
@@ -16,6 +15,7 @@ import {
     RatingStarIcon,
     RatingNumber,
 } from "./styled";
+import { ContentLink } from "../../common/styled";
 import { SmallGreyText, SmallTile } from "../../common/styled";
 
 const MoviesTiles = () => {
@@ -92,7 +92,7 @@ const MoviesTiles = () => {
                         </RatingContainer>
                     </SeparateFlexContainer>
                 </MovieTile>
-            ))};
+            ))}
         </MoviesTilesWrapper>
     );
 };
