@@ -1,7 +1,11 @@
-import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchPeopleListLoad } from "./peopleSlice";
+import {
+    selectPeopleList,
+    selectStatus
+} from "./peopleSlice";
 import { PeopleList } from "./styled";
-import { selectPeopleList } from "./peopleSlice";
 import {
     MovieDetailsPhotoTile,
     MovieDetailsActorsPhoto,
@@ -10,23 +14,18 @@ import {
 import { ContentLink } from "../../common/styled";
 
 const People = () => {
-    const peoplePromise = useSelector((state) => selectPeopleList(state));
-    const [popularPeople, setPopularPeople] = useState([]);
-
-    const photoUrl = "https://image.tmdb.org/t/p/original";
+    const dispatch = useDispatch();
+    const status = useSelector(selectStatus);
 
     useEffect(() => {
-        async function fetchPopularPeople() {
-            try {
-                const people = await peoplePromise;
-                setPopularPeople(people.results);
-            } catch (error) {
-                console.error(error);
-            }
+        if (status !== "success") {
+            dispatch(fetchPeopleListLoad());
         }
+    }, [dispatch, status]);
 
-        fetchPopularPeople();
-    }, [peoplePromise]);
+    const popularPeople = useSelector(selectPeopleList);
+
+    const photoUrl = "https://image.tmdb.org/t/p/original";
 
     return (
         <PeopleList>
