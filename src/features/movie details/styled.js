@@ -119,31 +119,6 @@ export const MovieDetailsTileTittle = styled.p`
   color: ${({ theme }) => theme.color.black};
 `;
 
-export const MovieDetailsPhotoTile = styled.div`
-  background-color: ${({ theme }) => theme.color.white};
-  width: 208px;
-  height: 346px;
-  display: grid;
-  grid-template-rows: auto 1fr 1fr;
-  padding: 16px;
-`;
-
-export const MovieDetailsActorsPhoto = styled.img`
-  width: 177px;
-  height: 246px;
-  margin: -6px -1px -27px -1px;
-`;
-
-export const MovieDetailsActorsName = styled.p`
-  text-align: center;
-  font-size: 22px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 130%;
-  color: ${({ theme }) => theme.color.black};
-  margin: 39px auto 0px auto;
-`;
-
 export const MovieDetailsCharacter = styled.p`
   margin: 8px auto 0px auto;
   text-align: center;
