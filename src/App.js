@@ -1,6 +1,7 @@
 import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import NavigationBar from "./common/NavigationBar";
+import Section from "./common/Section";
 import MoviesTiles from "./features/MoviesTiles";
 import Pagination from "./common/Pagination";
 import MovieDetails from "./features/movie details";
@@ -20,8 +21,11 @@ function App() {
           </Route>
           <Route path="/people"></Route>
           <Route path="/movies">
-            <MoviesTiles />
-            <Pagination />
+            <Section
+              title="Popular movies"
+              content={<MoviesTiles />}
+              extraContent={<Pagination />}
+            />
           </Route>
           <Route path="/">
             <Redirect to="/movies" />

@@ -2,7 +2,6 @@ import styled, { css } from "styled-components";
 import { ReactComponent as VectorIcon } from "../../images/vectorIcon.svg";
 
 export const PaginationContainer = styled.div`
-  margin-top: 40px;
   display: grid;
   grid-template-columns: repeat(3, max-content);
   grid-gap: 24px;
