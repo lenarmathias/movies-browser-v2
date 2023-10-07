@@ -17,6 +17,10 @@ export const GlobalStyles = createGlobalStyle`
     width: 1368px;
     max-width: 85%;
     font-family: "Poppins", sans-serif;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      margin-top: 166px;
+    }
   }
 
   button {
