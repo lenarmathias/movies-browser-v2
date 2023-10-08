@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    height: 250px;
+    height: 214px;
     margin-top: -26px;
   }
 `;
@@ -114,6 +114,14 @@ export const Poster = styled.div`
 export const Details = styled.div`
   width: auto;
   margin: 0% 15%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin: -4% 15%;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+    margin: -6% 15%;
+  }
 `;
 
 export const Title = styled.div`
@@ -130,5 +138,3 @@ export const Title = styled.div`
     font-size: 24px;
   }
 `;
-
-export const Rating = styled.div``;
