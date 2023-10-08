@@ -21,6 +21,11 @@ const PersonInfo = ({ personDetails }) => {
 
     const photoUrl = "https://image.tmdb.org/t/p/original";
 
+    const formatDate = (personBirthday) => {
+        const [year, month, day] = personBirthday.split('-');
+        return `${day}.${month}.${year}`;
+    };
+
     return (
         <BigTile>
             <GridContainer>
@@ -48,10 +53,13 @@ const PersonInfo = ({ personDetails }) => {
                             Date of birth:
                         </SmallGreyText>
                         <SmallGreyText $portfolioTextBlack>
-                            {personBirthday}
+                            {
+                                personBirthday
+                                    ? formatDate(personBirthday)
+                                    : "Uknown"
+                            }
                         </SmallGreyText>
                     </FlexBoxContainer>
-
                     <FlexBoxContainer $rowDirection>
                         <SmallGreyText $portfolioText>
                             Place of birth:
