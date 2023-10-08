@@ -102,11 +102,11 @@ export const NavigationItem = styled.li`
 `;
 
 export const LogoNavigationLink = styled(NavLink)`
-    padding: 8px 24px;
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    grid-gap: 12px;
-    text-decoration: none;
+  padding: 8px 24px;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  grid-gap: 12px;
+  text-decoration: none;
 
   &.active {
     border: none;
