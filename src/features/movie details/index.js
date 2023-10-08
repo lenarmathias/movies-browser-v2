@@ -1,24 +1,6 @@
-import {
-  MovieDetailsCharacter,
-  MovieDetailsContainer,
-  MovieDetailsDiv,
-  MovieDetailsRate,
-  MovieDetailsRateScale,
-  MovieDetailsRatesNumber,
-  MovieDetailsRatingDiv,
-  MovieDetailsRatingStar,
-  MovieDetailsSection,
-  MovieDetailsTileDiv,
-  MovieDetailsTileTittle,
-  MovieDetailsTittle,
-} from "./styled";
-import {
-  MovieDetailsPhotoTile,
-  MovieDetailsActorsPhoto,
-  MovieDetailsActorsName,
-} from "../../common/styled";
-import { ReactComponent as StarIcon } from "../../images/shape-star.svg";
-import actorsPhoto from "../../images/actorsPhoto.svg";
+import { MovieDetailsWrapper } from "./styled";
+import MovieTopInfo from "./MovieTopInfo";
+import MoviePeople from "./MoviePeople";
 
 const MovieDetails = () => {
   return (
