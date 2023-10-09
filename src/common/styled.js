@@ -17,6 +17,16 @@ export const SmallGreyText = styled.p`
         color: ${({ theme }) => theme.color.black};
     `}
 
+    ${({ $portfolioText }) => $portfolioText && css`
+        color: ${({ theme }) => theme.color.stormGrey};
+        font-size: 18px;
+        line-height: 120%;
+    `}
+
+    ${({ $portfolioTextBlack }) => $portfolioTextBlack && css`
+        color: ${({ theme }) => theme.color.blackSolid};
+    `}
+
     @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
         font-size: 13px;
         line-height: 130%;
@@ -102,6 +112,25 @@ export const MissingProfilePhoto = styled(MovieDetailsActorsPhoto)`
   display: grid;
   align-items: center;
   justify-content: center;
+
+  ${({ $portfolioPhoto }) => $portfolioPhoto && css`
+        width: auto;
+        height: 100%;
+        max-width: auto;
+        max-height: 564px;
+    `}
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.wideMobile}) {
+        width: 120px;
+        height: 178px;
+
+        ${({ $portfolioPhoto }) => $portfolioPhoto && css`
+            width: auto;
+            height: 100%;
+            max-width: auto;
+            max-height: 163px;
+        `}
+    }
 `;
 
 export const MissingProfilePhotoIcon = styled(MissingPhotoIcon)`

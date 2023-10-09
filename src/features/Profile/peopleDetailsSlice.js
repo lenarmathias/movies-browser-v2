@@ -33,10 +33,13 @@ const peopleDetailsSlice = createSlice({
     },
 
     resetPeopleDetails: (state) => {
-      state.personId = null;
-      state.details = null;
-      state.credits = null;
       state.status = "loading";
+      state.personId = 0;
+      state.details = {};
+      state.cast = [];
+      state.crew = [];
+      state.genres = [];
+      state.credits = [];
     },
   },
 });

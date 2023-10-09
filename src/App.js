@@ -18,7 +18,7 @@ function App() {
         <NavigationBar />
 
         <Switch>
-          <Route path="/people/:id">
+          <Route path="/people/:personId">
             <Profile />
           </Route>
           <Route path="/movies/:id">
