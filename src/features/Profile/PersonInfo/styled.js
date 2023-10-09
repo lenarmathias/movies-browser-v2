@@ -12,7 +12,7 @@ export const BigTile = styled.div`
         "photo bio";
     grid-gap: 24px 40px;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.narrow}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.tabletWide}) {
         grid-template-areas: 
             "photo info"
             "bio bio";
