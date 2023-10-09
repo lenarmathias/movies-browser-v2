@@ -9,7 +9,7 @@ const Rating = ({ rating, votes, $movieTileDetails }) => {
 
   return (
     <Container $movieTileDetails={$movieTileDetails}>
-      <RatingWrapper>
+      <RatingWrapper $movieTileDetails={$movieTileDetails}>
         <Star $movieTileDetails={$movieTileDetails} />
         <Rate $movieTileDetails={$movieTileDetails}>
           {ratingDotReplaceWithComma(rating)}

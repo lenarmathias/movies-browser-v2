@@ -7,7 +7,7 @@ export const Container = styled.div`
     justify-content: start;
     align-items: baseline;
     grid-template-columns: auto auto;
-    gap: 8px;
+    grid-gap: 8px;
   }
 
   ${({ $movieTileDetails }) =>
@@ -15,12 +15,12 @@ export const Container = styled.div`
     css`
       display: grid;
       grid-template-columns: auto auto;
-      gap: 6px;
       justify-content: center;
       align-items: center;
 
       @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
         margin-top: 10px;
+        grid-gap: 0;
       }
     `}
 `;
@@ -30,15 +30,27 @@ export const RatingWrapper = styled.div`
   grid-template-columns: repeat(3, auto);
   justify-content: start;
   align-items: baseline;
-  gap: 8px;
+  grid-gap: 8px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    gap: 4px;
+    grid-gap: 4px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    gap: 4px;
+    grid-gap: 4px;
   }
+
+  ${({ $movieTileDetails }) => $movieTileDetails && css`
+      grid-gap: 12px;
+
+      @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        grid-gap: 12px;
+      }
+
+      @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+        grid-gap: 8px;
+      }
+    `}
 `;
 
 export const Star = styled(StarIcon)`
