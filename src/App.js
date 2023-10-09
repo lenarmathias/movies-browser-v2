@@ -6,7 +6,7 @@ import MoviesTiles from "./features/MoviesTiles";
 import People from "./features/People";
 import Profile from "./features/Profile";
 import Pagination from "./common/Pagination";
-import MovieDetails from "./features/movie details";
+import MovieDetails from "./features/MovieDetails";
 import { GlobalStyles } from "./GlobalStyle";
 import { theme } from "./theme";
 
