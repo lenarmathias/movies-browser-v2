@@ -1,14 +1,14 @@
 import { MaxRate, Rate, Star, Votes, RatingWrapper, Container } from "./styled";
 
-const Rating = ({ rating, votes }) => {
+const Rating = ({ rating, votes, movieTileDetails }) => {
   return (
-    <Container>
+    <Container movieTileDetails={movieTileDetails}>
       <RatingWrapper>
-        <Star></Star>
-        <Rate>{rating}</Rate>
-        <MaxRate>/10</MaxRate>
+        <Star movieTileDetails={movieTileDetails}></Star>
+        <Rate movieTileDetails={movieTileDetails}>{rating}</Rate>
+        {!movieTileDetails && <MaxRate>/10</MaxRate>}
       </RatingWrapper>
-      <Votes>{votes} votes</Votes>
+      <Votes movieTileDetails={movieTileDetails}>{votes} votes</Votes>
     </Container>
   );
 };
