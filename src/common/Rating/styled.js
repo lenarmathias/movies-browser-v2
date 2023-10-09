@@ -10,17 +10,17 @@ export const Container = styled.div`
     gap: 8px;
   }
 
-  ${({ movieTileDetails }) =>
-    movieTileDetails &&
+  ${({ $movieTileDetails }) =>
+    $movieTileDetails &&
     css`
       display: grid;
       grid-template-columns: auto auto;
       gap: 6px;
-      justify-content: start;
-      align-items: baseline;
+      justify-content: center;
+      align-items: center;
 
       @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-        margin-top: 8px;
+        margin-top: 10px;
       }
     `}
 `;
@@ -55,8 +55,8 @@ export const Star = styled(StarIcon)`
     width: 16px;
   }
 
-  ${({ movieTileDetails }) =>
-    movieTileDetails &&
+  ${({ $movieTileDetails }) =>
+    $movieTileDetails &&
     css`
       height: 24px;
       width: 24px;
@@ -85,9 +85,10 @@ export const Rate = styled.span`
     font-size: 16px;
   }
 
-  ${({ movieTileDetails }) =>
-    movieTileDetails &&
+  ${({ $movieTileDetails }) =>
+    $movieTileDetails &&
     css`
+      align-self: center;
       font-size: 16px;
       color: ${({ theme }) => theme.color.black};
       font-weight: 600;
@@ -129,9 +130,11 @@ export const Votes = styled.div`
     font-size: 10px;
   }
 
-  ${({ movieTileDetails }) =>
-    movieTileDetails &&
+  ${({ $movieTileDetails }) =>
+    $movieTileDetails &&
     css`
+      align-self: center;
+      margin-top: 0;
       font-size: 16px;
       color: ${({ theme }) => theme.color.darkerGrey};
       font-weight: 400;

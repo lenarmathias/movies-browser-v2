@@ -11,10 +11,7 @@ import {
   SeparateFlexContainer,
   MovieInfoContainer,
   MovieTitle,
-  GenresContainer,
-  RatingContainer,
-  RatingStarIcon,
-  RatingNumber,
+  GenresContainer
 } from "./styled";
 import { ContentLink } from "../../common/styled";
 import { SmallGreyText, SmallTile } from "../../common/styled";
@@ -81,7 +78,7 @@ const MoviesTiles = () => {
             <Rating
               votes={movie.vote_count}
               rating={movie.vote_average}
-              movieTileDetails
+              $movieTileDetails
             />
           </SeparateFlexContainer>
         </MovieTile>
