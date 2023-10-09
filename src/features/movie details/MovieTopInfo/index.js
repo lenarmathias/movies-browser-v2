@@ -1,4 +1,5 @@
-import { Details, Poster, Rating, Title, Wrapper } from "./styled";
+import Rating from "../../../common/Rating";
+import { Details, Poster, Title, Wrapper } from "./styled";
 
 const MovieTopInfo = ({ title }) => {
   return (
@@ -6,7 +7,7 @@ const MovieTopInfo = ({ title }) => {
       <Poster>
         <Details>
           <Title>{title}</Title>
-          <Rating />
+          <Rating votes={405} rating={7.5} />
         </Details>
       </Poster>
     </Wrapper>
