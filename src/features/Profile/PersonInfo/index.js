@@ -6,11 +6,11 @@ import {
     FlexBoxContainer,
     BiographyText
 } from "./styled";
+import { SmallGreyText } from "../../../common/styled";
 import {
     MissingProfilePhoto,
-    MissingProfilePhotoIcon,
-    SmallGreyText
-} from "../../../common/styled";
+    MissingProfilePhotoIcon
+} from "../../../common/Tiles/PeopleTile/styled";
 
 const PersonInfo = ({ personDetails }) => {
     const personName = personDetails.name;

@@ -7,20 +7,20 @@ export const Container = styled.div`
     justify-content: start;
     align-items: baseline;
     grid-template-columns: auto auto;
-    gap: 8px;
+    grid-gap: 8px;
   }
 
-  ${({ movieTileDetails }) =>
-    movieTileDetails &&
+  ${({ $movieTileDetails }) =>
+    $movieTileDetails &&
     css`
       display: grid;
       grid-template-columns: auto auto;
-      gap: 6px;
-      justify-content: start;
-      align-items: baseline;
+      justify-content: center;
+      align-items: center;
 
       @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-        margin-top: 8px;
+        margin-top: 10px;
+        grid-gap: 0;
       }
     `}
 `;
@@ -30,15 +30,27 @@ export const RatingWrapper = styled.div`
   grid-template-columns: repeat(3, auto);
   justify-content: start;
   align-items: baseline;
-  gap: 8px;
+  grid-gap: 8px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    gap: 4px;
+    grid-gap: 4px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    gap: 4px;
+    grid-gap: 4px;
   }
+
+  ${({ $movieTileDetails }) => $movieTileDetails && css`
+      grid-gap: 12px;
+
+      @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        grid-gap: 12px;
+      }
+
+      @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+        grid-gap: 8px;
+      }
+    `}
 `;
 
 export const Star = styled(StarIcon)`
@@ -55,8 +67,8 @@ export const Star = styled(StarIcon)`
     width: 16px;
   }
 
-  ${({ movieTileDetails }) =>
-    movieTileDetails &&
+  ${({ $movieTileDetails }) =>
+    $movieTileDetails &&
     css`
       height: 24px;
       width: 24px;
@@ -85,9 +97,10 @@ export const Rate = styled.span`
     font-size: 16px;
   }
 
-  ${({ movieTileDetails }) =>
-    movieTileDetails &&
+  ${({ $movieTileDetails }) =>
+    $movieTileDetails &&
     css`
+      align-self: center;
       font-size: 16px;
       color: ${({ theme }) => theme.color.black};
       font-weight: 600;
@@ -129,9 +142,11 @@ export const Votes = styled.div`
     font-size: 10px;
   }
 
-  ${({ movieTileDetails }) =>
-    movieTileDetails &&
+  ${({ $movieTileDetails }) =>
+    $movieTileDetails &&
     css`
+      align-self: center;
+      margin-top: 0;
       font-size: 16px;
       color: ${({ theme }) => theme.color.darkerGrey};
       font-weight: 400;
