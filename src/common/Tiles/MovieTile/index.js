@@ -1,4 +1,5 @@
 import Rating from "../../Rating/index";
+import { imageUrl } from "../../imageUrl";
 import {
     MovieTileContainer,
     MoviePoster,
@@ -16,8 +17,6 @@ import {
 } from "../../styled";
 
 const MovieTile = ({ movie, movieGenres }) => {
-    const posterUrl = "https://image.tmdb.org/t/p/original";
-
     const getReleaseYear = (releaseDate) => {
         const dateParts = releaseDate.split("-");
         return dateParts[0];
@@ -33,7 +32,7 @@ const MovieTile = ({ movie, movieGenres }) => {
             <ContentLink to={`/movies/${movie.id}`}>
                 {movie.poster_path ? (
                     <MoviePoster
-                        src={posterUrl + movie.poster_path}
+                        src={imageUrl + movie.poster_path}
                         alt="Movie Poster"
                     />
                 ) : (

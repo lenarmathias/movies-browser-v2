@@ -5,19 +5,13 @@ import {
     selectPeopleList,
     selectStatus
 } from "./peopleSlice";
+import PeopleTile from "../../common/Tiles/PeopleTile";
 import { PeopleList } from "./styled";
-import {
-    MovieDetailsPhotoTile,
-    MovieDetailsActorsPhoto,
-    MovieDetailsActorsName,
-    MissingProfilePhoto,
-    MissingProfilePhotoIcon
-} from "../../common/styled";
-import { ContentLink } from "../../common/styled";
 
 const People = () => {
     const dispatch = useDispatch();
     const status = useSelector(selectStatus);
+    const popularPeople = useSelector(selectPeopleList);
 
     useEffect(() => {
         if (status !== "success") {
@@ -25,30 +19,13 @@ const People = () => {
         }
     }, [dispatch, status]);
 
-    const popularPeople = useSelector(selectPeopleList);
-
-    const photoUrl = "https://image.tmdb.org/t/p/original";
-
     return (
         <PeopleList>
             {popularPeople.map((person) => (
-                <MovieDetailsPhotoTile key={person.id}>
-                    <ContentLink to={`/people/${person.id}`}>
-                        {person.profile_path ? (
-                            <MovieDetailsActorsPhoto
-                                src={photoUrl + person.profile_path}
-                                alt="Profile Photo"
-                            />
-                        ) : (
-                            <MissingProfilePhoto as="div">
-                                <MissingProfilePhotoIcon />
-                            </MissingProfilePhoto>
-                        )}
-                        <MovieDetailsActorsName>
-                            {person.name}
-                        </MovieDetailsActorsName>
-                    </ContentLink>
-                </MovieDetailsPhotoTile>
+                <PeopleTile
+                    key={person.id}
+                    person={person}
+                />
             ))}
         </PeopleList>
     )
