@@ -79,3 +79,26 @@ export const SmallTile = styled.div`
 export const ContentLink = styled(Link)`
   text-decoration: none;
 `;
+
+export const SectionHeading = styled.h2`
+    margin-bottom: 24px;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+
+    ${({ $movieSection }) => $movieSection && css`
+        margin-top: 64px;
+    `}
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+        margin-bottom: 12px;
+        font-size: 18px;
+
+        ${({ $movieSection }) => $movieSection && css`
+            margin-top: 24px;
+            margin-bottom: 16px;
+            font-size: 20px;
+        `}
+    }
+`;

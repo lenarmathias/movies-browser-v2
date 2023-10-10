@@ -7,9 +7,12 @@ import {
     resetPeopleDetails,
     selectDetailsStatus,
     selectPeopleDetails,
+    selectGenresDetails,
+    selectPeopleCast,
+    selectPeopleCrew
 } from "./peopleDetailsSlice";
 import PersonInfo from "./PersonInfo";
-import { LayoutContainer } from "./styled";
+import PersonMovies from "./PersonMovies";
 
 const Profile = () => {
     const dispatch = useDispatch();
@@ -18,6 +21,9 @@ const Profile = () => {
     const status = useSelector(selectDetailsStatus);
     const currentPersonId = useSelector(selectPersonId);
     const personDetails = useSelector(selectPeopleDetails);
+    const movieGenres = useSelector(selectGenresDetails);
+    const personCast = useSelector(selectPeopleCast);
+    const personCrew = useSelector(selectPeopleCrew);
 
     useEffect(() => {
         if (status !== "success") {
@@ -32,9 +38,23 @@ const Profile = () => {
     }, [dispatch, personId, currentPersonId]);
 
     return (
-        <LayoutContainer>
+        <>
             <PersonInfo personDetails={personDetails} />
-        </LayoutContainer>
+            {personCast.length > 0 &&
+                <PersonMovies
+                    title="cast"
+                    movieGenres={movieGenres}
+                    personMovieList={personCast}
+                />
+            }
+            {personCrew.length > 0 &&
+                <PersonMovies
+                    title="crew"
+                    movieGenres={movieGenres}
+                    personMovieList={personCrew}
+                />
+            }
+        </>
     )
 };
 
