@@ -47,7 +47,10 @@ const MovieTile = ({ movie, movieGenres }) => {
                         <MovieTitle>{movie.title}</MovieTitle>
                     </ContentLink>
                     <SmallGreyText>
-                        {getReleaseYear(movie.release_date)}
+                        {movie.character || movie.job
+                            ? `${movie.character || movie.job} (${getReleaseYear(movie.release_date)})`
+                            : getReleaseYear(movie.release_date)
+                        }
                     </SmallGreyText>
                     <GenresContainer>
                         {movie.genre_ids &&
