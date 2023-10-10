@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { ReactComponent as MissingPosterIcon } from "../../../images/missingMoviePoster.svg";
-
-const boxShadowColor = ({ theme }) => theme.color.boxShadow;
+import { boxShadowColor } from "../../styled";
 
 export const MovieTileContainer = styled.div`
     max-width: 324px;

@@ -1,34 +1,27 @@
 import styled, { css } from "styled-components";
 import { ReactComponent as MissingPhotoIcon } from "../../../images/missingProfilePhotoIcon.svg";
-
-const boxShadowColor = ({ theme }) => theme.color.boxShadow;
+import { boxShadowColor } from "../../styled";
 
 export const PeopleTileContainer = styled.div`
     background-color: ${({ theme }) => theme.color.white};
-    width: 208px;
-    height: 346px;
+    max-width: 208px;
+    max-height: auto;
     display: grid;
     grid-template-rows: auto 1fr 1fr;
     padding: 16px;
     border-radius: 5px;
     box-shadow: 0px 4px 12px 0px ${boxShadowColor};
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.wideMobile}) {
-        width: 136px;
-        height: 245px;
+    @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
         padding: 8px;
     }
 `;
 
 export const PeopleTilePhoto = styled.img`
-    width: 177px;
-    height: 246px;
+    width: 100%;
+    max-width: 177px;
+    max-height: auto;
     border-radius: 5px;
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.wideMobile}) {
-        width: 120px;
-        height: 178px;
-    }
 `;
 
 export const MissingProfilePhoto = styled(PeopleTilePhoto)`
@@ -75,7 +68,7 @@ export const PeopleTileName = styled.p`
     line-height: 130%;
     color: ${({ theme }) => theme.color.black};
     margin-top: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.wideMobile}) {
         font-size: 14px;

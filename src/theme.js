@@ -19,10 +19,12 @@ export const theme = {
 
   breakpoints: {
     verySmallMobile: "375px",
+    vga: "640px",
     smallMobile: "720px",
     wideMobile: "800px",
     mobile: "900px",
     narrow: "950px",
+    tabletMedium: "1050px",
     tabletWide: "1280px",
   },
 };

@@ -1,6 +1,8 @@
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
+export const boxShadowColor = ({ theme }) => theme.color.boxShadow;
+
 export const SmallGreyText = styled.p`
     color: ${({ theme }) => theme.color.darkerGrey};
     margin: 0;
