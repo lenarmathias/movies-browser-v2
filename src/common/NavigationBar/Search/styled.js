@@ -5,7 +5,7 @@ import searchIcon from "../Images/search.svg";
 export const Wrapper = styled.div`
   padding-left: 387px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.tabletWide}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletWide}) {
     padding-left: 20%;
     padding-right: 16px;
     padding-top: 16px;
@@ -13,17 +13,17 @@ export const Wrapper = styled.div`
     flex-grow: 2;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     padding-left: 10%;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.smallMobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     padding-left: 0;
     padding-top: 6px;
     width: 100%;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.wideMobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.wideMobile}) {
     padding-top: 17px;
   }
 `;
@@ -40,11 +40,11 @@ export const Input = styled.input`
   background-position: 24px center;
   background-size: 24px 24px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.tabletWide}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletWide}) {
     min-width: 100%;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.wideMobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.wideMobile}) {
     height: 44px;
     padding-left: 40px;
     background-position: 16px center;
