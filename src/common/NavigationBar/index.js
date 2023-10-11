@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { Search } from "./Search";
 import {
   NavigationBarContainer,
   NavigationBarWrapper,
@@ -12,11 +12,9 @@ import {
   StyledNavigationLink,
   SearchContainer,
   SearchIcon,
-  SearchInput,
 } from "./styled";
 
 const NavigationBar = () => {
-  const location = useLocation();
 
   return (
     <NavigationBarContainer>
@@ -51,14 +49,7 @@ const NavigationBar = () => {
         </NavigationButtonsWrapper>
         <SearchContainer>
           <SearchIcon />
-          <SearchInput
-            placeholder={
-              `Search for ${location.pathname === "/movies"
-                ? "movies..."
-                : "people..."}
-              `
-            }
-          />
+          <Search />
         </SearchContainer>
       </NavigationBarWrapper>
     </NavigationBarContainer>
