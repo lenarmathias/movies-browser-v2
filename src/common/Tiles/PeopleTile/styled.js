@@ -4,6 +4,7 @@ import { boxShadowColor } from "../../styled";
 
 export const PeopleTileContainer = styled.div`
     background-color: ${({ theme }) => theme.color.white};
+    width: 100%;
     max-width: 208px;
     max-height: auto;
     display: grid;
@@ -29,6 +30,10 @@ export const MissingProfilePhoto = styled(PeopleTilePhoto)`
   display: grid;
   align-items: center;
   justify-content: center;
+  width:100%;
+  height: 100%;
+  max-width: 160px;
+  max-height: 240px;
 
   ${({ $portfolioPhoto }) => $portfolioPhoto && css`
         width: 100%;

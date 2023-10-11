@@ -26,6 +26,11 @@ export const SmallGreyText = styled.p`
         color: ${({ theme }) => theme.color.blackSolid};
     `}
 
+    ${({ $roleOrJob }) => $roleOrJob && css`
+        margin-top: 8px;
+        text-align: center;
+    `}
+
     @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
         font-size: 13px;
         line-height: 130%;
@@ -33,6 +38,11 @@ export const SmallGreyText = styled.p`
         ${({ $paginationText }) => $paginationText && css`
             font-size: 10px;
             line-height: 24px;
+        `}
+
+        ${({ $roleOrJob }) => $roleOrJob && css`
+            font-size: 13px;
+            line-height: 130%;
         `}
     }
 `;

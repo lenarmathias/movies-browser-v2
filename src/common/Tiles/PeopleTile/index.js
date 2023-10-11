@@ -6,7 +6,7 @@ import {
     MissingProfilePhoto,
     MissingProfilePhotoIcon
 } from "./styled";
-import { ContentLink } from "../../styled";
+import { SmallGreyText, ContentLink } from "../../styled";
 
 const PeopleTile = ({ person }) => (
     <PeopleTileContainer>
@@ -24,6 +24,13 @@ const PeopleTile = ({ person }) => (
             <PeopleTileName>
                 {person.name}
             </PeopleTileName>
+            {
+                (person.character || person.job) && (
+                    <SmallGreyText $roleOrJob>
+                        {person.character} {person.job}
+                    </SmallGreyText>
+                )
+            }
         </ContentLink>
     </PeopleTileContainer>
 );
