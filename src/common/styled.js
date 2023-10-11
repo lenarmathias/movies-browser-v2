@@ -103,6 +103,10 @@ export const SectionHeading = styled.h2`
         margin-top: 64px;
     `}
 
+    ${({ $titleHidden }) => $titleHidden && css`
+        display: none;
+    `}
+
     @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
         margin-bottom: 12px;
         font-size: 18px;

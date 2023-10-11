@@ -6,6 +6,7 @@ import {
     selectStatus
 } from "./peopleSlice";
 import PeopleTile from "../../common/Tiles/PeopleTile";
+import Loading from "../Actions/Loading";
 import { PeopleList } from "./styled";
 
 const People = () => {
@@ -20,14 +21,18 @@ const People = () => {
     }, [dispatch, status]);
 
     return (
-        <PeopleList>
-            {popularPeople.map((person) => (
-                <PeopleTile
-                    key={person.id}
-                    person={person}
-                />
-            ))}
-        </PeopleList>
+        status === "success" ? (
+            <PeopleList>
+                {popularPeople.map((person) => (
+                    <PeopleTile
+                        key={person.id}
+                        person={person}
+                    />
+                ))}
+            </PeopleList>
+        ) : (
+            <Loading $titleHidden />
+        )
     )
 };
 

@@ -7,6 +7,7 @@ import {
   selectGenres
 } from "./movieListSlice";
 import MovieTile from "../../common/Tiles/MovieTile";
+import Loading from "../Actions/Loading";
 import { MovieListOrganizer } from "./styled";
 
 const MovieList = () => {
@@ -22,15 +23,19 @@ const MovieList = () => {
   }, [dispatch, status]);
 
   return (
-    <MovieListOrganizer>
-      {moviesList.map((movie) => (
-        <MovieTile
-          key={movie.id}
-          movie={movie}
-          movieGenres={movieGenres}
-        />
-      ))}
-    </MovieListOrganizer>
+    status === "success" ? (
+      <MovieListOrganizer>
+        {moviesList.map((movie) => (
+          <MovieTile
+            key={movie.id}
+            movie={movie}
+            movieGenres={movieGenres}
+          />
+        ))}
+      </MovieListOrganizer>
+    ) : (
+      <Loading $titleHidden />
+    )
   );
 };
 

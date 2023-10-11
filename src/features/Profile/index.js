@@ -13,6 +13,7 @@ import {
 } from "./peopleDetailsSlice";
 import PersonInfo from "./PersonInfo";
 import PersonMovies from "./PersonMovies";
+import Loading from "../Actions/Loading";
 
 const Profile = () => {
     const dispatch = useDispatch();
@@ -38,23 +39,27 @@ const Profile = () => {
     }, [dispatch, personId, currentPersonId]);
 
     return (
-        <>
-            <PersonInfo personDetails={personDetails} />
-            {personCast.length > 0 &&
-                <PersonMovies
-                    title="cast"
-                    movieGenres={movieGenres}
-                    personMovieList={personCast}
-                />
-            }
-            {personCrew.length > 0 &&
-                <PersonMovies
-                    title="crew"
-                    movieGenres={movieGenres}
-                    personMovieList={personCrew}
-                />
-            }
-        </>
+        status === "success" ? (
+            <>
+                <PersonInfo personDetails={personDetails} />
+                {personCast.length > 0 && (
+                    <PersonMovies
+                        title="cast"
+                        movieGenres={movieGenres}
+                        personMovieList={personCast}
+                    />
+                )}
+                {personCrew.length > 0 && (
+                    <PersonMovies
+                        title="crew"
+                        movieGenres={movieGenres}
+                        personMovieList={personCrew}
+                    />
+                )}
+            </>
+        ) : (
+            <Loading titleHidden={true} />
+        )
     )
 };
 
