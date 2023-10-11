@@ -2,15 +2,25 @@ import styled, { css } from "styled-components";
 import { ReactComponent as VectorIcon } from "../../images/vectorIcon.svg";
 
 export const PaginationContainer = styled.div`
+  margin-top: 40px;
   display: grid;
   grid-template-columns: repeat(3, max-content);
   grid-gap: 24px;
   justify-content: center;
   align-items: center;
 
+  ${({ $peoplePagination }) => $peoplePagination && css`
+    margin-top: 56px;
+  `}
+
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     grid-gap: 8px;
     margin-top: 32px;
+
+    ${({ $peoplePagination }) => $peoplePagination && css`
+      grid-gap: 8px;
+      margin-top: 50px;
+    `}
   }
 `;
 
@@ -45,8 +55,8 @@ export const PageVectorIcon = styled(VectorIcon)`
     height: 8px;
 
     ${({ $mobileOnly }) =>
-      $mobileOnly &&
-      css`
+    $mobileOnly &&
+    css`
         display: block;
       `}
   }

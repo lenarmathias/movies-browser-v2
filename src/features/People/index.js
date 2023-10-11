@@ -6,6 +6,7 @@ import {
     selectStatus
 } from "./peopleSlice";
 import PeopleTile from "../../common/Tiles/PeopleTile";
+import Pagination from "../../common/Pagination";
 import Loading from "../Actions/Loading";
 import { PeopleList } from "./styled";
 
@@ -22,14 +23,17 @@ const People = () => {
 
     return (
         status === "success" ? (
-            <PeopleList>
-                {popularPeople.map((person) => (
-                    <PeopleTile
-                        key={person.id}
-                        person={person}
-                    />
-                ))}
-            </PeopleList>
+            <>
+                <PeopleList>
+                    {popularPeople.map((person) => (
+                        <PeopleTile
+                            key={person.id}
+                            person={person}
+                        />
+                    ))}
+                </PeopleList>
+                <Pagination $peoplePagination />
+            </>
         ) : (
             <Loading $titleHidden />
         )
