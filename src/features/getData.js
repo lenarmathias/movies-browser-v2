@@ -11,6 +11,9 @@ export const getMovieDetails = async ({ movieId }) => {
   return await response.data;
 };
 
+const movie = await getMovieDetails({ movieId: 926393 });
+console.log(movie.title);
+
 export const getMovieCredits = async ({ movieId }) => {
   const response = await axios.get(
     `${URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`
@@ -23,7 +26,7 @@ export const getPopularMovies = async (page) => {
   const response = await axios.get(
     `${URL}/movie/popular?api_key=${API_KEY}&language=en-US&page=${page}`
   );
-  
+
   return await response.data;
 };
 
@@ -31,7 +34,7 @@ export const getGenres = async () => {
   const response = await axios.get(
     `${URL}/genre/movie/list?api_key=${API_KEY}&language=en-US`
   );
-  
+
   return await response.data.genres;
 };
 
@@ -43,11 +46,11 @@ export const getSearch = async ({ query, page }) => {
   return await response.data;
 };
 
-export const getPopularPeople = async ( page ) => {
+export const getPopularPeople = async (page) => {
   const response = await axios.get(
     `${URL}/person/popular?api_key=${API_KEY}&language=en-US&page=${page}`
   );
-  
+
   return await response.data;
 };
 
@@ -55,7 +58,7 @@ export const getSearchPeople = async ({ query, page }) => {
   const response = await axios.get(
     `${URL}/search/person?api_key=${API_KEY}&query=${query}&include_adult=false&language=en-US&page=${page}`
   );
-  
+
   return await response.data;
 };
 
@@ -70,7 +73,7 @@ export const getPeopleDetails = async (personId) => {
 export const getPeopleMovieCredits = async (personId) => {
   const response = await axios.get(
     `${URL}/person/${personId}/movie_credits?api_key=${API_KEY}`
-  ); 
+  );
 
   return await response.data;
 };

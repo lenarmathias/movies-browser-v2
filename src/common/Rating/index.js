@@ -3,7 +3,7 @@ import { MaxRate, Rate, Star, Votes, RatingWrapper, Container } from "./styled";
 const Rating = ({ rating, votes, $movieTileDetails }) => {
   const ratingDotReplaceWithComma = (rating) => {
     const ratingString = rating.toString();
-    const modifiedRating = ratingString.replace(/\./g, ',');
+    const modifiedRating = ratingString.replace(/\./g, ",");
     return modifiedRating;
   };
 
@@ -16,9 +16,7 @@ const Rating = ({ rating, votes, $movieTileDetails }) => {
         </Rate>
         {!$movieTileDetails && <MaxRate>/10</MaxRate>}
       </RatingWrapper>
-      <Votes $movieTileDetails={$movieTileDetails}>
-        {votes} votes
-      </Votes>
+      <Votes $movieTileDetails={$movieTileDetails}>{votes} votes</Votes>
     </Container>
   );
 };
