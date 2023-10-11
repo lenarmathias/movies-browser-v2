@@ -2,7 +2,8 @@ import { MaxRate, Rate, Star, Votes, RatingWrapper, Container } from "./styled";
 
 const Rating = ({ rating, votes, $movieTileDetails }) => {
   const ratingDotReplaceWithComma = (rating) => {
-    const ratingString = rating.toString();
+    const fixedRating = rating.toFixed(1);
+    const ratingString = fixedRating.toString();
     const modifiedRating = ratingString.replace(/\./g, ',');
     return modifiedRating;
   };
