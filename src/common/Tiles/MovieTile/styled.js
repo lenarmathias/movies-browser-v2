@@ -25,7 +25,7 @@ export const MovieTileContainer = styled.div`
         min-height: auto;
         height: 201px;
         display: grid;
-        grid-template-columns: max-content 1fr;
+        grid-template-columns: repeat(2, 1fr);
         grid-gap: 16px;
     }
 `;
@@ -46,11 +46,20 @@ export const MoviePoster = styled.img`
     }
 `;
 
-export const MissingMoviePoster = styled(MoviePoster)`
+export const MissingMoviePoster = styled.div`
     background-color: ${({ theme }) => theme.color.silver};
+    height: 100%;
+    width: 100%;
+    max-height: 380px;
     display: grid;
     align-items: center;
     justify-content: center;
+    border-radius: 5px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+        width: 114px;
+        height: 169px;
+    }
 `;
 
 export const MissingMoviePosterIcon = styled(MissingPosterIcon)`

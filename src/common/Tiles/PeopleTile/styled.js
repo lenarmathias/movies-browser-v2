@@ -31,9 +31,9 @@ export const MissingProfilePhoto = styled(PeopleTilePhoto)`
   justify-content: center;
 
   ${({ $portfolioPhoto }) => $portfolioPhoto && css`
-        width: auto;
+        width: 100%;
         height: 100%;
-        max-width: auto;
+        max-width: 399px;
         max-height: 564px;
     `}
 

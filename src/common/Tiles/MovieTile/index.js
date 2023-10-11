@@ -36,7 +36,7 @@ const MovieTile = ({ movie, movieGenres }) => {
                         alt="Movie Poster"
                     />
                 ) : (
-                    <MissingMoviePoster as="div">
+                    <MissingMoviePoster>
                         <MissingMoviePosterIcon />
                     </MissingMoviePoster>
                 )}
