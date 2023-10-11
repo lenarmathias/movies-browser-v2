@@ -7,7 +7,7 @@ export const PeopleTileContainer = styled.div`
     max-width: 208px;
     max-height: auto;
     display: grid;
-    grid-template-rows: auto 1fr 1fr;
+    grid-template-rows: auto, repeat(2, 1fr);
     padding: 16px;
     border-radius: 5px;
     box-shadow: 0px 4px 12px 0px ${boxShadowColor};
