@@ -12,7 +12,6 @@ export const getMovieDetails = async ({ movieId }) => {
 };
 
 const movie = await getMovieDetails({ movieId: 926393 });
-console.log(movie.title);
 
 export const getMovieCredits = async ({ movieId }) => {
   const response = await axios.get(
