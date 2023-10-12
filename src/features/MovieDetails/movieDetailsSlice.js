@@ -9,6 +9,10 @@ const movieDetailsSlice = createSlice({
     status: "loading",
   },
   reducers: {
+    fetchMovieDetailsLoad: (state) => {
+      state.status = "loading";
+    },
+
     fetchMovieDetailsSuccess: (state) => {
       state.status = "success";
     },
@@ -40,6 +44,7 @@ const movieDetailsSlice = createSlice({
 
 export const {
   fetchMovieDetails,
+  fetchMovieDetailsLoad,
   getMovieId,
   fetchMovieDetailsSuccess,
   fetchMoviesListError,
