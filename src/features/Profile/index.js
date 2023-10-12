@@ -9,10 +9,12 @@ import {
     selectPeopleDetails,
     selectGenresDetails,
     selectPeopleCast,
-    selectPeopleCrew
+    selectPeopleCrew,
+    fetchPeopleDetailsLoad
 } from "./peopleDetailsSlice";
 import PersonInfo from "./PersonInfo";
 import PersonMovies from "./PersonMovies";
+import Loading from "../Actions/Loading";
 
 const Profile = () => {
     const dispatch = useDispatch();
@@ -26,9 +28,11 @@ const Profile = () => {
     const personCrew = useSelector(selectPeopleCrew);
 
     useEffect(() => {
-        if (status !== "success") {
-            dispatch(getPersonId(personId));
-        }
+        dispatch(fetchPeopleDetailsLoad());
+    }, [dispatch]);
+
+    useEffect(() => {
+        dispatch(getPersonId((personId)));
     }, [dispatch, status, personId]);
 
     useEffect(() => {
@@ -37,25 +41,27 @@ const Profile = () => {
         }
     }, [dispatch, personId, currentPersonId]);
 
-    return (
+    return status === "success" ? (
         <>
             <PersonInfo personDetails={personDetails} />
-            {personCast.length > 0 &&
+            {personCast.length > 0 && (
                 <PersonMovies
                     title="cast"
                     movieGenres={movieGenres}
                     personMovieList={personCast}
                 />
-            }
-            {personCrew.length > 0 &&
+            )}
+            {personCrew.length > 0 && (
                 <PersonMovies
                     title="crew"
                     movieGenres={movieGenres}
                     personMovieList={personCrew}
                 />
-            }
+            )}
         </>
+    ) : (
+        <Loading $titleHidden />
     )
 };
 
-export default Profile
+export default Profile;

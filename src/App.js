@@ -5,7 +5,6 @@ import Section from "./common/Section";
 import MovieList from "./features/MovieList";
 import People from "./features/People";
 import Profile from "./features/Profile";
-import Pagination from "./common/Pagination";
 import MovieDetails from "./features/MovieDetails";
 import { GlobalStyles } from "./GlobalStyle";
 import { theme } from "./theme";
@@ -28,14 +27,12 @@ function App() {
             <Section
               title="Popular people"
               content={<People />}
-              extraContent={<Pagination />}
             />
           </Route>
           <Route path="/movies">
             <Section
               title="Popular movies"
               content={<MovieList />}
-              extraContent={<Pagination />}
             />
           </Route>
           <Route path="/">

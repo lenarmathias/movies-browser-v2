@@ -7,6 +7,8 @@ import {
   selectGenres
 } from "./movieListSlice";
 import MovieTile from "../../common/Tiles/MovieTile";
+import Pagination from "../../common/Pagination";
+import Loading from "../Actions/Loading";
 import { MovieListOrganizer } from "./styled";
 
 const MovieList = () => {
@@ -16,21 +18,23 @@ const MovieList = () => {
   const movieGenres = useSelector(selectGenres);
 
   useEffect(() => {
-    if (status !== "success") {
-      dispatch(fetchMoviesListLoad());
-    }
-  }, [dispatch, status]);
+    dispatch(fetchMoviesListLoad());
+  }, [dispatch]);
 
-  return (
-    <MovieListOrganizer>
-      {moviesList.map((movie) => (
-        <MovieTile
-          key={movie.id}
-          movie={movie}
-          movieGenres={movieGenres}
-        />
-      ))}
-    </MovieListOrganizer>
+  return status === "success" ? (
+    <>
+      <MovieListOrganizer>
+        {moviesList.map((movie) => (
+          <MovieTile key={movie.id}
+            movie={movie}
+            movieGenres={movieGenres}
+          />
+        ))}
+      </MovieListOrganizer>
+      <Pagination />
+    </>
+  ) : (
+    <Loading $titleHidden />
   );
 };
 

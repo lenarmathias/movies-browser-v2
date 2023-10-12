@@ -1,53 +1,54 @@
 import styled from "styled-components";
+import { ReactComponent as Search } from "../../../images/searchIcon.svg";
 
-import searchIcon from "../Images/search.svg";
+export const SearchContainer = styled.div`
+  max-width: 432px;
+  width: 100%;
+  height: 48px;
+  padding: 12px 24px;
+  border: 1px solid ${({ theme }) => theme.color.grey};
+  border-radius: 33px;
+  background: ${({ theme }) => theme.color.white};
+  display: flex;
+  align-items: center;
+  gap: 16px;
 
-export const Wrapper = styled.div`
-  padding-left: 387px;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.tabletWide}) {
-    padding-left: 20%;
-    padding-right: 16px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    flex-grow: 2;
+  @media (max-width: ${({ theme }) => theme.breakpoints.narrow}) {
+    max-width: 100%;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    padding-left: 10%;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    padding-left: 0;
-    padding-top: 6px;
-    width: 100%;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.wideMobile}) {
-    padding-top: 17px;
+    max-width: 100%;
+    height: 44px;
+    padding: 14px 16px;
+    gap: 8px;
   }
 `;
 
-export const Input = styled.input`
-  min-width: 432px;
-  height: 48px;
-  border-radius: 33px;
-  border: 1px solid ${({ theme }) => theme.color.mystic};
-  background: ${({ theme }) => theme.color.white};
-  padding-left: 64px;
-  background-image: url(${searchIcon});
-  background-repeat: no-repeat;
-  background-position: 24px center;
-  background-size: 24px 24px;
+export const SearchIcon = styled(Search)`
+  width: 24px;
+  height: 24px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tabletWide}) {
-    min-width: 100%;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 16px;
+    height: 16px;
+  }
+`;
+
+export const SearchInput = styled.input`
+  color: ${({ theme }) => theme.color.darkerGrey};
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  border: none;
+
+  &:focus {
+    outline: none;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.wideMobile}) {
-    height: 44px;
-    padding-left: 40px;
-    background-position: 16px center;
-    background-size: 16px 16px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 13px;
+    line-height: 130%;
   }
 `;

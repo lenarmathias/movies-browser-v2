@@ -2,10 +2,16 @@ import { MovieDetailsWrapper } from "./styled";
 import MovieTopInfo from "./MovieTopInfo";
 import MoviePeople from "./MoviePeople";
 import { useDispatch, useSelector } from "react-redux";
-import { getMovieId, selectDetails, selectStatus } from "./movieDetailsSlice";
+import {
+  getMovieId,
+  selectDetails,
+  selectStatus,
+  fetchMovieDetailsLoad,
+} from "./movieDetailsSlice";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { imageUrl } from "../../common/imageUrl";
+import Loading from "../Actions/Loading";
 
 const MovieDetails = () => {
   const status = useSelector(selectStatus);
@@ -18,7 +24,11 @@ const MovieDetails = () => {
     dispatch(getMovieId(id));
   }, [status, dispatch, id]);
 
-  return (
+  useEffect(() => {
+    dispatch(fetchMovieDetailsLoad());
+  }, [dispatch]);
+
+  return status === "success" ? (
     <>
       <MovieDetailsWrapper>
         <MovieTopInfo
@@ -31,6 +41,8 @@ const MovieDetails = () => {
         <MoviePeople />
       </MovieDetailsWrapper>
     </>
+  ) : (
+    <Loading $titleHidden />
   );
 };
 
