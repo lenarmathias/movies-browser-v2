@@ -4,6 +4,7 @@ const peopleListSlice = createSlice({
   name: "peopleList",
   initialState: {
     people: [],
+    currentPage: 1,
     totalPages: 0,
     totalResults: 1,
     status: "loading",
@@ -16,7 +17,8 @@ const peopleListSlice = createSlice({
       state.status = "success";
     },
 
-    fetchPeopleListLoad: (state) => {
+    fetchPeopleListLoad: (state, { payload: { page } }) => {
+      state.currentPage = page;
       state.status = "loading";
     },
 

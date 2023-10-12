@@ -9,7 +9,7 @@ import { getPopularPeople, getSearchPeople } from "../getData";
 
 function* getPopularPeopleHandler() {
   try {
-    const page = yield select();
+    const page = yield select((state) => state.peopleList.currentPage);
     const data = yield call(getPopularPeople, page);
     yield delay(1000);
     yield put(fetchPeopleListSuccess({ data }));
@@ -21,7 +21,7 @@ function* getPopularPeopleHandler() {
 function* getSearchPeopleHandler({ payload: query }) {
   try {
     yield delay(800);
-    const page = yield select();
+    const page = yield select((state) => state.peopleList.currentPage);
     const data = yield call(getSearchPeople, { query, page });
     yield put(fetchPeopleListSuccess({ data }));
   } catch (error) {
