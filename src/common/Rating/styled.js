@@ -18,6 +18,8 @@ export const Container = styled.div`
       align-items: center;
 
       @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+        margin-bottom: 16px;
+        gap: 0px;
       }
     `}
 
@@ -160,6 +162,7 @@ export const MaxRate = styled.span`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     font-size: 10px;
+    display: none;
   }
 
   ${({ $movieInfo }) =>

@@ -5,9 +5,9 @@ import {
   GenresContainer,
   Info,
   Poster,
-  ProductionDiv,
+  ProductionSpan,
   Release,
-  ReleaseDiv,
+  ReleaseSpan,
   Title,
   Wrapper,
   Year,
@@ -31,14 +31,10 @@ const MovieInfo = ({
       <Info>
         <Title>{title}</Title>
         <Year>{year}</Year>
-        <ProductionDiv>
-          Production:
-          <Countries> {countries}</Countries>
-        </ProductionDiv>
-        <ReleaseDiv>
-          Release date:
-          <Release> {release}</Release>
-        </ReleaseDiv>
+        <ProductionSpan>{`Production: `}</ProductionSpan>
+        <Countries>{countries}</Countries>
+        <ReleaseSpan>Release date:</ReleaseSpan>
+        <Release>{` ${release}`}</Release>
         <GenresContainer>{genres}</GenresContainer>
         <Rating votes={votes} rating={rating} $movieInfo />
       </Info>
