@@ -1,4 +1,13 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
 
 export const Wrapper = styled.div`
   display: flex;
@@ -66,6 +75,8 @@ export const Poster = styled.div`
   background-position: center;
   background-size: auto 100%;
   background-repeat: no-repeat;
+  opacity: 0;
+  animation: ${fadeIn} 2s forwards;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     background: linear-gradient(
@@ -107,6 +118,8 @@ export const Poster = styled.div`
     background-position: center;
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    opacity: 0;
+    animation: ${fadeIn} 2s forwards;
   }
 `;
 
