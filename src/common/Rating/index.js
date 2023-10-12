@@ -1,4 +1,3 @@
-import MovieInfo from "../../features/MovieDetails/MovieInfo";
 import { MaxRate, Rate, Star, Votes, RatingWrapper, Container } from "./styled";
 
 const Rating = ({ rating, votes, $movieTileDetails, $movieInfo }) => {

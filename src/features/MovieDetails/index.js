@@ -6,6 +6,7 @@ import {
   getMovieId,
   selectDetails,
   selectStatus,
+  selectCredits,
   fetchMovieDetailsLoad,
 } from "./movieDetailsSlice";
 import { useEffect } from "react";
@@ -32,6 +33,10 @@ const MovieDetails = () => {
     ...state
   } = useSelector(selectDetails) ?? {};
   console.log(state);
+
+  const selectedMoviePeople = useSelector(selectCredits);
+  const movieCast = selectedMoviePeople.cast;
+  const movieCrew = selectedMoviePeople.crew;
 
   useEffect(() => {
     dispatch(fetchMovieDetailsLoad());
@@ -76,11 +81,21 @@ const MovieDetails = () => {
           release={getFullReleaseDate(release_date)}
           countries={getProductionCountries(production_countries)}
           genres={
-            genres && genres.map((genre) => <SmallTile>{genre.name}</SmallTile>)
+            genres && genres.map((genre) => <SmallTile key={genre.id}>{genre.name}</SmallTile>)
           }
         />
-        <MoviePeople />
-        <MoviePeople />
+        {movieCast.length > 0 && (
+          <MoviePeople
+            title="Cast"
+            moviePeople={movieCast}
+          />
+        )}
+        {movieCrew.length > 0 && (
+          <MoviePeople
+            title="Crew"
+            moviePeople={movieCrew}
+          />
+        )}
       </MovieDetailsWrapper>
     </>
   ) : (
