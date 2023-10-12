@@ -1,6 +1,6 @@
 import { MaxRate, Rate, Star, Votes, RatingWrapper, Container } from "./styled";
 
-const Rating = ({ rating, votes, $movieTileDetails }) => {
+const Rating = ({ rating, votes, $movieTileDetails, $movieInfo }) => {
   const ratingDotReplaceWithComma = (rating) => {
     const fixedRating = rating.toFixed(1);
     const ratingString = fixedRating.toString();
@@ -9,15 +9,17 @@ const Rating = ({ rating, votes, $movieTileDetails }) => {
   };
 
   return (
-    <Container $movieTileDetails={$movieTileDetails}>
+    <Container $movieTileDetails={$movieTileDetails} $movieInfo={$movieInfo}>
       <RatingWrapper $movieTileDetails={$movieTileDetails}>
-        <Star $movieTileDetails={$movieTileDetails} />
-        <Rate $movieTileDetails={$movieTileDetails}>
+        <Star $movieTileDetails={$movieTileDetails} $movieInfo={$movieInfo} />
+        <Rate $movieTileDetails={$movieTileDetails} $movieInfo={$movieInfo}>
           {ratingDotReplaceWithComma(rating)}
         </Rate>
-        {!$movieTileDetails && <MaxRate>/10</MaxRate>}
+        {!$movieTileDetails && <MaxRate $movieInfo={$movieInfo}>/10</MaxRate>}
       </RatingWrapper>
-      <Votes $movieTileDetails={$movieTileDetails}>{votes} votes</Votes>
+      <Votes $movieTileDetails={$movieTileDetails} $movieInfo={$movieInfo}>
+        {votes} votes
+      </Votes>
     </Container>
   );
 };

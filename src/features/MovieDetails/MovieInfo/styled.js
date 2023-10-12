@@ -26,6 +26,9 @@ export const Info = styled.div`
 
 export const Description = styled.div`
   grid-area: description;
+  font-size: 20px;
+  font-weight: 400px;
+  margin-top: -40px;
 `;
 
 export const Title = styled.div`
@@ -40,13 +43,43 @@ export const Year = styled.div`
   margin-bottom: 24px;
 `;
 
-export const GreyData = styled.span`
+export const ProductionDiv = styled.div`
   font-size: 18px;
   font-weight: 400;
   color: ${({ theme }) => theme.color.stormGrey};
 `;
 
-export const Production = styled.span`
+export const Countries = styled.span`
   font-size: 18px;
   font-weight: 400;
+  color: ${({ theme }) => theme.color.black};
+`;
+
+export const ReleaseDiv = styled(ProductionDiv)`
+  margin-top: 8px;
+  margin-bottom: 8px;
+`;
+
+export const Release = styled.span`
+  font-size: 18px;
+  font-weight: 400;
+  color: ${({ theme }) => theme.color.black};
+`;
+
+export const GenresContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+`;
+
+export const SmallTile = styled.div`
+  height: 36px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  background-color: ${({ theme }) => theme.color.colorDivider};
 `;

@@ -13,6 +13,7 @@ import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { imageUrl } from "../../common/imageUrl";
 import Loading from "../Actions/Loading";
 import MovieInfo from "./MovieInfo";
+import { SmallTile } from "./MovieInfo/styled";
 
 const MovieDetails = () => {
   const status = useSelector(selectStatus);
@@ -25,6 +26,9 @@ const MovieDetails = () => {
     vote_count,
     poster_path,
     release_date,
+    production_countries,
+    genres,
+    overview,
     ...state
   } = useSelector(selectDetails) ?? {};
   console.log(state);
@@ -48,6 +52,10 @@ const MovieDetails = () => {
     return fullDate;
   };
 
+  const getProductionCountries = (production_countries) => {
+    return production_countries.map((country) => country.name).join(", ");
+  };
+
   return status === "success" ? (
     <>
       <MovieDetailsWrapper>
@@ -58,10 +66,18 @@ const MovieDetails = () => {
           rating={Number(vote_average)}
         />
         <MovieInfo
+          $movieTileDetails
+          description={overview}
+          votes={vote_count}
+          rating={Number(vote_average)}
           smallImgUrl={imageUrl + poster_path}
           title={title}
           year={getReleaseYear(release_date)}
           release={getFullReleaseDate(release_date)}
+          countries={getProductionCountries(production_countries)}
+          genres={
+            genres && genres.map((genre) => <SmallTile>{genre.name}</SmallTile>)
+          }
         />
         <MoviePeople />
         <MoviePeople />
