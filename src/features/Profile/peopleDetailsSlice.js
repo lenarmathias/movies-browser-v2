@@ -41,6 +41,8 @@ const peopleDetailsSlice = createSlice({
       state.genres = [];
       state.credits = [];
     },
+
+    resetStatus: (state) => (state.status = "loading"),
   },
 });
 
@@ -50,6 +52,7 @@ export const {
   fetchPeopleDetailsSuccess,
   fetchPeopleDetailsError,
   resetPeopleDetails,
+  resetStatus,
 } = peopleDetailsSlice.actions;
 
 export const selectPeopleDetailsState = (state) => state.peopleDetails;
