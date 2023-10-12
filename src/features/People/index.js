@@ -20,7 +20,10 @@ const People = () => {
     <>
       <PeopleList>
         {popularPeople.map((person) => (
-          <PeopleTile key={person.id} person={person} />
+          <PeopleTile
+            key={person.id}
+            person={person}
+          />
         ))}
       </PeopleList>
       <Pagination $peoplePagination />

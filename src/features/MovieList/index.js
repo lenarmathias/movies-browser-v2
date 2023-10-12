@@ -1,7 +1,11 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMoviesListLoad } from "./movieListSlice";
-import { selectMoviesList, selectStatus, selectGenres } from "./movieListSlice";
+import {
+  selectMoviesList,
+  selectStatus,
+  selectGenres
+} from "./movieListSlice";
 import MovieTile from "../../common/Tiles/MovieTile";
 import Pagination from "../../common/Pagination";
 import Loading from "../Actions/Loading";
@@ -21,7 +25,10 @@ const MovieList = () => {
     <>
       <MovieListOrganizer>
         {moviesList.map((movie) => (
-          <MovieTile key={movie.id} movie={movie} movieGenres={movieGenres} />
+          <MovieTile key={movie.id}
+            movie={movie}
+            movieGenres={movieGenres}
+          />
         ))}
       </MovieListOrganizer>
       <Pagination />
