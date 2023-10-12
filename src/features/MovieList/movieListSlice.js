@@ -5,6 +5,7 @@ const moviesListSlice = createSlice({
   initialState: {
     movies: [],
     genres: [],
+    currentPage: 1,
     totalPages: 1,
     totalResults: "",
     status: "loading",
@@ -18,7 +19,8 @@ const moviesListSlice = createSlice({
       state.status = "success";
     },
 
-    fetchMoviesListLoad: (state) => {
+    fetchMoviesListLoad: (state, { payload: { page } }) => {
+      state.currentPage = page;
       state.status = "loading";
     },
 

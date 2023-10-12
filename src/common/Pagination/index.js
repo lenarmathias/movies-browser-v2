@@ -8,20 +8,36 @@ import {
   PageButtonsContainer,
 } from "./styled";
 
-const Pagination = () => {
-  return (
+const Pagination = ({
+  totalPages,
+  currentPage
+}) => (
+  currentPage !== undefined && (
     <PaginationContainer>
       <PageButtonsContainer>
-        <FirstPageButton />
-        <PreviousPageButton />
+        <FirstPageButton
+          currentPage={currentPage}
+        />
+        <PreviousPageButton
+          currentPage={currentPage}
+        />
       </PageButtonsContainer>
-      <MiddlePanel />
+      <MiddlePanel
+        currentPage={currentPage}
+        totalPages={totalPages}
+      />
       <PageButtonsContainer>
-        <NextPageButton />
-        <LastPageButton />
+        <NextPageButton
+          totalPages={totalPages}
+          currentPage={currentPage}
+        />
+        <LastPageButton
+          totalPages={totalPages}
+          currentPage={currentPage}
+        />
       </PageButtonsContainer>
     </PaginationContainer>
-  );
-};
+  )
+);
 
 export default Pagination;

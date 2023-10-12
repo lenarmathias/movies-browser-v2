@@ -9,7 +9,7 @@ import { getGenres, getPopularMovies, getSearch } from "../getData";
 
 function* getPopularMoviesHandler() {
   try {
-    const page = yield select();
+    const page = yield select((state) => state.moviesList.currentPage);
     const genres = yield call(getGenres);
     const data = yield call(getPopularMovies, page);
     yield delay(1000);
@@ -22,7 +22,7 @@ function* getPopularMoviesHandler() {
 function* getSearchMoviesHandler({ payload: query }) {
   try {
     yield delay(800);
-    const page = yield select();
+    const page = yield select((state) => state.moviesList.currentPage);
     const genres = yield call(getGenres);
     const data = yield call(getSearch, { query, page });
     yield put(fetchMoviesListSuccess({ data, genres }));

@@ -5,6 +5,7 @@ import movieDetailsReducer from "./features/MovieDetails/movieDetailsSlice";
 import moviesListReducer from "./features/MovieList/movieListSlice";
 import peopleListReducer from "./features/People/peopleSlice";
 import peopleDetailsReducer from "./features/Profile/peopleDetailsSlice";
+import paginationReducer from "./common/Pagination/paginationSlice";
 const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
@@ -13,6 +14,7 @@ const store = configureStore({
     movieDetails: movieDetailsReducer,
     peopleList: peopleListReducer,
     peopleDetails: peopleDetailsReducer,
+    pagination: paginationReducer,
   },
   middleware: [sagaMiddleware],
 });

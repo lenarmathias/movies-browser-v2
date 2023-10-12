@@ -1,11 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchMoviesListLoad } from "./movieListSlice";
 import {
+  fetchMoviesListLoad,
+  selectMoviesListState,
   selectMoviesList,
   selectStatus,
   selectGenres
 } from "./movieListSlice";
+import { selectPage } from "../../common/Pagination/paginationSlice";
 import MovieTile from "../../common/Tiles/MovieTile";
 import Pagination from "../../common/Pagination";
 import Loading from "../Actions/Loading";
@@ -17,9 +19,19 @@ const MovieList = () => {
   const moviesList = useSelector(selectMoviesList);
   const movieGenres = useSelector(selectGenres);
 
+  const totalPages = 500;
+  const { currentPage } = useSelector(selectMoviesListState);
+  const selectedPage = useSelector(selectPage);
+
   useEffect(() => {
-    dispatch(fetchMoviesListLoad());
-  }, [dispatch]);
+    dispatch(fetchMoviesListLoad({ page: currentPage }));
+  }, [dispatch, currentPage]);
+
+  useEffect(() => {
+    if (currentPage !== selectedPage) {
+      dispatch(fetchMoviesListLoad({ page: selectedPage }));
+    }
+  }, [dispatch, currentPage, selectedPage]);
 
   return status === "success" ? (
     <>
@@ -31,7 +43,10 @@ const MovieList = () => {
           />
         ))}
       </MovieListOrganizer>
-      <Pagination />
+      <Pagination
+        totalPages={totalPages}
+        currentPage={currentPage}
+      />
     </>
   ) : (
     <Loading $titleHidden />
