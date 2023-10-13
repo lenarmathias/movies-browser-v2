@@ -30,10 +30,7 @@ function App() {
             />
           </Route>
           <Route path="/movies">
-            <Section
-              title="Popular movies"
-              content={<MovieList />}
-            />
+            <MovieList />
           </Route>
           <Route path="/">
             <Redirect to="/movies" />

@@ -1,6 +1,6 @@
 import { Warning, Container, Title, Info, Link, LinkContent } from "./styled";
 
-export const Error = () => (
+const Error = () => (
   <>
     <Warning />
     <Container>
@@ -12,3 +12,5 @@ export const Error = () => (
     </Container>
   </>
 );
+
+export default Error;
