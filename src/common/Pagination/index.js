@@ -1,54 +1,43 @@
+import FirstPageButton from "./Buttons/FirstPageButton";
+import PreviousPageButton from "./Buttons/PreviousPageButton";
+import MiddlePanel from "./MiddlePanel";
+import NextPageButton from "./Buttons/NextPageButton";
+import LastPageButton from "./Buttons/LastPageButton";
 import {
   PaginationContainer,
   PageButtonsContainer,
-  PageVectorIcon,
-  ButtonContent,
-  MobileHide,
-  MiddleContainer,
 } from "./styled";
-import { SmallTile, SmallGreyText } from "../../common/styled.js";
 
-const Pagination = () => {
-  return (
+const Pagination = ({
+  totalPages,
+  currentPage
+}) => (
+  currentPage !== undefined && (
     <PaginationContainer>
       <PageButtonsContainer>
-        <SmallTile $pageButton as="button" disabled>
-          <ButtonContent>
-            <PageVectorIcon $previousPage />
-            <PageVectorIcon $previousPage $mobileOnly />
-            <MobileHide>First</MobileHide>
-          </ButtonContent>
-        </SmallTile>
-        <SmallTile $pageButton as="button" disabled>
-          <ButtonContent>
-            <PageVectorIcon $previousPage />
-            <MobileHide>Previous</MobileHide>
-          </ButtonContent>
-        </SmallTile>
+        <FirstPageButton
+          currentPage={currentPage}
+        />
+        <PreviousPageButton
+          currentPage={currentPage}
+        />
       </PageButtonsContainer>
-      <MiddleContainer>
-        <SmallGreyText>Page</SmallGreyText>
-        <SmallGreyText $boldBlackText>1</SmallGreyText>
-        <SmallGreyText>of</SmallGreyText>
-        <SmallGreyText $boldBlackText>500</SmallGreyText>
-      </MiddleContainer>
+      <MiddlePanel
+        currentPage={currentPage}
+        totalPages={totalPages}
+      />
       <PageButtonsContainer>
-        <SmallTile $pageButton as="button">
-          <ButtonContent>
-            <MobileHide>Next</MobileHide>
-            <PageVectorIcon />
-          </ButtonContent>
-        </SmallTile>
-        <SmallTile $pageButton as="button">
-          <ButtonContent>
-            <MobileHide>Last</MobileHide>
-            <PageVectorIcon $mobileOnly />
-            <PageVectorIcon />
-          </ButtonContent>
-        </SmallTile>
+        <NextPageButton
+          totalPages={totalPages}
+          currentPage={currentPage}
+        />
+        <LastPageButton
+          totalPages={totalPages}
+          currentPage={currentPage}
+        />
       </PageButtonsContainer>
     </PaginationContainer>
-  );
-};
+  )
+);
 
 export default Pagination;

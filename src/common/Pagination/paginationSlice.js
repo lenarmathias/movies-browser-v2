@@ -3,12 +3,12 @@ import { createSlice } from "@reduxjs/toolkit";
 const paginationSlice = createSlice({
   name: "pagination",
   initialState: {
-    page: null,
+    page: 1,
     totalPages: null,
   },
   reducers: {
     changePage: (state, { payload: action }) => {
-      state.page = action;
+      state.page = action.payload;
     },
     resetPage: (state) => {
       state.page = 1;
