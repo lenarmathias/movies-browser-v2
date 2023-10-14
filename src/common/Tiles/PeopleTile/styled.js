@@ -6,7 +6,8 @@ export const PeopleTileContainer = styled.div`
   background-color: ${({ theme }) => theme.color.white};
   width: 100%;
   max-width: 208px;
-  height: 339px;
+  min-height: 338px;
+  height: 100%;
   display: grid;
   grid-template-rows: auto, repeat(2, 1fr);
   padding: 16px;
@@ -17,7 +18,7 @@ export const PeopleTileContainer = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     padding: 8px;
-    height: 245px;
+    min-height: 245px;
     width: 136px;
   }
 `;
