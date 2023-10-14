@@ -10,6 +10,19 @@ export const Container = styled.div`
     grid-gap: 8px;
   }
 
+  ${({ $movieInfo }) =>
+    $movieInfo &&
+    css`
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+
+      @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+        margin-bottom: 16px;
+        gap: 0px;
+      }
+    `}
+
   ${({ $movieTileDetails }) =>
     $movieTileDetails &&
     css`
@@ -40,8 +53,11 @@ export const RatingWrapper = styled.div`
     grid-gap: 4px;
   }
 
-  ${({ $movieTileDetails }) => $movieTileDetails && css`
+  ${({ $movieTileDetails }) =>
+    $movieTileDetails &&
+    css`
       grid-gap: 12px;
+      grid-template-columns: repeat(4, auto);
 
       @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         grid-gap: 12px;
@@ -66,6 +82,16 @@ export const Star = styled(StarIcon)`
     height: 16px;
     width: 16px;
   }
+
+  ${({ $movieInfo }) =>
+    $movieInfo &&
+    css`
+      width: 24px;
+      height: 24px;
+
+      @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+      }
+    `}
 
   ${({ $movieTileDetails }) =>
     $movieTileDetails &&
@@ -97,6 +123,17 @@ export const Rate = styled.span`
     font-size: 16px;
   }
 
+  ${({ $movieInfo }) =>
+    $movieInfo &&
+    css`
+      color: ${({ theme }) => theme.color.black};
+      font-size: 22px;
+      font-weight: 500;
+
+      @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+      }
+    `}
+
   ${({ $movieTileDetails }) =>
     $movieTileDetails &&
     css`
@@ -125,7 +162,19 @@ export const MaxRate = styled.span`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     font-size: 10px;
+    display: none;
   }
+
+  ${({ $movieInfo }) =>
+    $movieInfo &&
+    css`
+      color: ${({ theme }) => theme.color.black};
+      font-size: 14px;
+      font-weight: 400;
+
+      @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+      }
+    `}
 `;
 
 export const Votes = styled.div`
@@ -141,6 +190,25 @@ export const Votes = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     font-size: 10px;
   }
+
+  ${({ $movieInfo }) =>
+    $movieInfo &&
+    css`
+      margin-left: 12px;
+      align-self: self-end;
+      margin-top: 0;
+      font-size: 16px;
+      color: ${({ theme }) => theme.color.darkerGrey};
+      font-weight: 400;
+
+      @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        font-size: 14px;
+      }
+
+      @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+        font-size: 13px;
+      }
+    `}
 
   ${({ $movieTileDetails }) =>
     $movieTileDetails &&
@@ -160,3 +228,10 @@ export const Votes = styled.div`
       }
     `}
 `;
+
+// ${({ $movieInfo }) =>
+//     $movieInfo &&
+//     css`
+//       @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+//       }
+//     `}
