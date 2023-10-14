@@ -6,10 +6,10 @@ export const boxShadowColor = ({ theme }) => theme.color.boxShadow;
 export const SmallGreyText = styled.p`
   color: ${({ theme }) => theme.color.darkerGrey};
   margin: 0;
-  font-size: 16px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%;
+  line-height: 100%;
 
   ${({ $boldBlackText }) =>
     $boldBlackText &&
@@ -28,19 +28,18 @@ export const SmallGreyText = styled.p`
 
     ${({ $portfolioTextBlack }) =>
     $portfolioTextBlack &&
-    css`
+    css`Z
       color: ${({ theme }) => theme.color.blackSolid};
     `}
 
     ${({ $roleOrJob }) =>
     $roleOrJob &&
     css`
-      margin-top: 8px;
       text-align: center;
     `}
 
     @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    font-size: 13px;
+    font-size: 12px;
     line-height: 130%;
 
     ${({ $paginationText }) =>

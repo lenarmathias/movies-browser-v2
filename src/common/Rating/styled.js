@@ -13,7 +13,7 @@ export const Container = styled.div`
   ${({ $movieInfo }) =>
     $movieInfo &&
     css`
-      margin-bottom: 24px;
+      margin-bottom: 32px;
       display: flex;
       align-items: center;
 

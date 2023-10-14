@@ -78,6 +78,11 @@ export const Year = styled.div`
   }
 `;
 
+export const RowContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 export const ProductionSpan = styled.span`
   font-size: 18px;
   font-weight: 400;
