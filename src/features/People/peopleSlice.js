@@ -8,6 +8,12 @@ const peopleListSlice = createSlice({
     totalPages: 0,
     totalResults: 1,
     status: "loading",
+    searchResults: {
+      results: [],
+      page: 1,
+      total_pages: 1,
+      total_results: "",
+    },
   },
   reducers: {
     fetchPeopleListSuccess: (state, { payload: people }) => {
@@ -29,6 +35,11 @@ const peopleListSlice = createSlice({
     fetchSearchPeopleLoad: (state) => {
       state.status = "loading";
     },
+
+    fetchSearchPeopleSuccess: (state, { payload: searchResults }) => {
+      state.searchResults = searchResults;
+      state.status = "success";
+    },
   },
 });
 export const {
@@ -36,6 +47,7 @@ export const {
   fetchPeopleListLoad,
   fetchPeopleListError,
   fetchSearchPeopleLoad,
+  fetchSearchPeopleSuccess,
 } = peopleListSlice.actions;
 
 export const selectPeopleListState = (state) => state.peopleList;
@@ -45,4 +57,5 @@ export const selectTotalResult = (state) =>
 export const selectStatus = (state) => selectPeopleListState(state).status;
 export const selectTotalPeoplePages = (state) =>
   selectPeopleListState(state).totalPages;
+export const selectSearchResults = (state) => selectPeopleListState(state).searchResults;
 export default peopleListSlice.reducer;

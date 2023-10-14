@@ -12,10 +12,13 @@ import {
   selectPage,
   resetPage
 } from "../../common/Pagination/paginationSlice";
+import { useQueryParameter } from "../../common/NavigationBar/Search/queryParameter";
 import PeopleTile from "../../common/Tiles/PeopleTile";
 import Pagination from "../../common/Pagination";
 import Loading from "../Actions/Loading";
+import SearchPeople from "../SearchPeople";
 import { PeopleList } from "./styled";
+import { SectionHeading } from "../../common/styled";
 
 const People = () => {
   const dispatch = useDispatch();
@@ -48,8 +51,16 @@ const People = () => {
     }
   }, [dispatch, currentPage, selectedPage]);
 
+  const query = useQueryParameter("search");
+  if (query) {
+    return <SearchPeople />;
+  }
+
   return status === "success" ? (
     <>
+      <SectionHeading>
+        Popular people
+      </SectionHeading>
       <PeopleList>
         {popularPeople.map((person) => (
           <PeopleTile
@@ -65,7 +76,12 @@ const People = () => {
       />
     </>
   ) : (
-    <Loading $titleHidden />
+    <>
+      <SectionHeading>
+        Popular people
+      </SectionHeading>
+      <Loading $titleHidden />
+    </>
   )
 };
 
