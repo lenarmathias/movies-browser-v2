@@ -17,6 +17,7 @@ import PeopleTile from "../../common/Tiles/PeopleTile";
 import Pagination from "../../common/Pagination";
 import Loading from "../Actions/Loading";
 import SearchPeople from "../SearchPeople";
+import Error from "../Actions/Error";
 import { PeopleList } from "./styled";
 import { SectionHeading } from "../../common/styled";
 
@@ -54,6 +55,10 @@ const People = () => {
   const query = useQueryParameter("search");
   if (query) {
     return <SearchPeople />;
+  }
+
+  if (status === "error") {
+    return <Error />;
   }
 
   return status === "success" ? (

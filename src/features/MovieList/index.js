@@ -17,6 +17,7 @@ import MovieTile from "../../common/Tiles/MovieTile";
 import Pagination from "../../common/Pagination";
 import Loading from "../Actions/Loading";
 import SearchMovies from "../SearchMovies";
+import Error from "../Actions/Error";
 import { MovieListOrganizer } from "./styled";
 import { SectionHeading } from "../../common/styled";
 
@@ -55,6 +56,10 @@ const MovieList = () => {
   const query = useQueryParameter("search");
   if (query) {
     return <SearchMovies movieGenres={movieGenres} />;
+  }
+
+  if (status === "error") {
+    return <Error />;
   }
 
   return status === "success" ? (

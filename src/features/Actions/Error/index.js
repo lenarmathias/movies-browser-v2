@@ -1,13 +1,18 @@
-import { Warning, Container, Title, Info, Link, LinkContent } from "./styled";
+import { SectionHeading } from "../../../common/styled";
+import { Warning, Container, Info, Link } from "./styled";
 
 const Error = () => (
   <>
     <Warning />
     <Container>
-      <Title>Ooops! Something went wrong... </Title>
-      <Info>Please check your network connection and try again</Info>
+      <SectionHeading>
+        Ooops! Something went wrong...
+      </SectionHeading>
+      <Info>
+        Please check your network connection and try again
+      </Info>
       <Link to="/movies">
-        <LinkContent>Back to home page</LinkContent>
+          Back to home page
       </Link>
     </Container>
   </>
