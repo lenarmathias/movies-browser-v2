@@ -12,10 +12,14 @@ import {
   selectPage,
   resetPage
 } from "../../common/Pagination/paginationSlice";
+import { useQueryParameter } from "../../common/NavigationBar/Search/queryParameter";
 import MovieTile from "../../common/Tiles/MovieTile";
 import Pagination from "../../common/Pagination";
 import Loading from "../Actions/Loading";
+import SearchMovies from "../SearchMovies";
+import Error from "../Actions/Error";
 import { MovieListOrganizer } from "./styled";
+import { SectionHeading } from "../../common/styled";
 
 const MovieList = () => {
   const dispatch = useDispatch();
@@ -49,8 +53,20 @@ const MovieList = () => {
     }
   }, [dispatch, currentPage, selectedPage]);
 
+  const query = useQueryParameter("search");
+  if (query) {
+    return <SearchMovies movieGenres={movieGenres} />;
+  }
+
+  if (status === "error") {
+    return <Error />;
+  }
+
   return status === "success" ? (
     <>
+      <SectionHeading>
+        Popular movies
+      </SectionHeading>
       <MovieListOrganizer>
         {moviesList.map((movie) => (
           <MovieTile key={movie.id}
@@ -65,7 +81,12 @@ const MovieList = () => {
       />
     </>
   ) : (
-    <Loading $titleHidden />
+    <>
+      <SectionHeading>
+        Popular movies
+      </SectionHeading>
+      <Loading $titleHidden />
+    </>
   );
 };
 

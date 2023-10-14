@@ -19,8 +19,8 @@ export const Spinner = styled(spinnerIcon)`
 `;
 
 export const Image = styled(image)`
-  width: 668px;
-  height: 509px;
+  max-width: 668px;
+  max-height: 509px;
   align-self: center;
   margin-top: 30px;
 `;

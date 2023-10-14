@@ -1,7 +1,6 @@
 import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import NavigationBar from "./common/NavigationBar";
-import Section from "./common/Section";
 import MovieList from "./features/MovieList";
 import People from "./features/People";
 import Profile from "./features/Profile";
@@ -24,16 +23,10 @@ function App() {
             <MovieDetails />
           </Route>
           <Route path="/people">
-            <Section
-              title="Popular people"
-              content={<People />}
-            />
+            <People />
           </Route>
           <Route path="/movies">
-            <Section
-              title="Popular movies"
-              content={<MovieList />}
-            />
+            <MovieList />
           </Route>
           <Route path="/">
             <Redirect to="/movies" />

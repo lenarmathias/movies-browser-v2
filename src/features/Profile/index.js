@@ -3,8 +3,6 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
     getPersonId,
-    selectPersonId,
-    resetPeopleDetails,
     selectDetailsStatus,
     selectPeopleDetails,
     selectGenresDetails,
@@ -15,31 +13,29 @@ import {
 import PersonInfo from "./PersonInfo";
 import PersonMovies from "./PersonMovies";
 import Loading from "../Actions/Loading";
+import Error from "../Actions/Error";
 
 const Profile = () => {
     const dispatch = useDispatch();
     const { personId } = useParams();
 
     const status = useSelector(selectDetailsStatus);
-    const currentPersonId = useSelector(selectPersonId);
     const personDetails = useSelector(selectPeopleDetails);
     const movieGenres = useSelector(selectGenresDetails);
     const personCast = useSelector(selectPeopleCast);
     const personCrew = useSelector(selectPeopleCrew);
 
     useEffect(() => {
-        dispatch(fetchPeopleDetailsLoad());
-    }, [dispatch]);
+        dispatch(fetchPeopleDetailsLoad(personId));
+    }, [dispatch, personId]);
 
     useEffect(() => {
         dispatch(getPersonId((personId)));
     }, [dispatch, status, personId]);
 
-    useEffect(() => {
-        if (personId !== currentPersonId && currentPersonId !== 0) {
-            dispatch(resetPeopleDetails());
-        }
-    }, [dispatch, personId, currentPersonId]);
+    if (status === "error") {
+        return <Error />;
+    }
 
     return status === "success" ? (
         <>

@@ -1,9 +1,10 @@
-import { call, delay, put, select, takeLatest } from "redux-saga/effects";
+import { call, delay, put, select, takeLatest, debounce } from "redux-saga/effects";
 import {
   fetchMoviesListLoad,
   fetchMoviesListSuccess,
   fetchMoviesListError,
   fetchSearchMoviesLoad,
+  fetchSearchMoviesSuccess
 } from "./movieListSlice";
 import { getGenres, getPopularMovies, getSearch } from "../getData";
 
@@ -25,7 +26,7 @@ function* getSearchMoviesHandler({ payload: query }) {
     const page = yield select((state) => state.moviesList.currentPage);
     const genres = yield call(getGenres);
     const data = yield call(getSearch, { query, page });
-    yield put(fetchMoviesListSuccess({ data, genres }));
+    yield put(fetchSearchMoviesSuccess(data, genres));
   } catch (error) {
     yield put(fetchMoviesListError());
   }
@@ -33,5 +34,5 @@ function* getSearchMoviesHandler({ payload: query }) {
 
 export function* watchFetchMoviesList() {
   yield takeLatest(fetchMoviesListLoad.type, getPopularMoviesHandler);
-  yield takeLatest(fetchSearchMoviesLoad.type, getSearchMoviesHandler);
+  yield debounce(2000, fetchSearchMoviesLoad.type, getSearchMoviesHandler);
 }

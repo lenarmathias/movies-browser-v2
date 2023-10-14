@@ -1,9 +1,10 @@
-import { call, delay, put, select, takeLatest } from "redux-saga/effects";
+import { call, delay, put, select, takeLatest, debounce } from "redux-saga/effects";
 import {
   fetchPeopleListSuccess,
   fetchPeopleListLoad,
   fetchPeopleListError,
   fetchSearchPeopleLoad,
+  fetchSearchPeopleSuccess,
 } from "./peopleSlice";
 import { getPopularPeople, getSearchPeople } from "../getData";
 
@@ -23,7 +24,7 @@ function* getSearchPeopleHandler({ payload: query }) {
     yield delay(800);
     const page = yield select((state) => state.peopleList.currentPage);
     const data = yield call(getSearchPeople, { query, page });
-    yield put(fetchPeopleListSuccess({ data }));
+    yield put(fetchSearchPeopleSuccess(data));
   } catch (error) {
     yield put(fetchPeopleListError());
   }
@@ -31,5 +32,5 @@ function* getSearchPeopleHandler({ payload: query }) {
 
 export function* watchFetchPeopleList() {
   yield takeLatest(fetchPeopleListLoad.type, getPopularPeopleHandler);
-  yield takeLatest(fetchSearchPeopleLoad.type, getSearchPeopleHandler);
+  yield debounce(2000, fetchSearchPeopleLoad.type, getSearchPeopleHandler);
 }
