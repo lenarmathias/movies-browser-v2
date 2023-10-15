@@ -1,6 +1,6 @@
 # Movies Browser
 
-![Movie Browser screen](<img width="1280" alt="Zrzut ekranu 2023-10-15 o 23 47 21" src="https://github.com/lenarmathias/movies-browser/assets/122434234/4ca13384-1da8-40af-991b-c4886ce991d9">)
+![Movie Browser screen](https://raw.githubusercontent.com/lenarmathias/movies-browser/screen-to-readme/src/images/screen.png)
 
 ## Overview
 
@@ -22,11 +22,7 @@ https://lenarmathias.github.io/movies-browser/
 
 Movie Browser is designed to showcase movies along with their ratings, actors, and crew. It allows users to search for movies and associated personnel, displaying detailed information about them, including the films in which they have participated.
 
-The application consists of two main sections:
-
-Movies
-
-People
+The application consists of two main sections: Movies and People
 
 Movies:
 This section presents a list of popular movies.
