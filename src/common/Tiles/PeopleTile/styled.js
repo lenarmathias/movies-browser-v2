@@ -27,7 +27,7 @@ export const PeopleTilePhoto = styled.img`
   width: 100%;
   max-width: 177px;
   border-radius: 5px;
-  height: 237px;
+  max-height: 237px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     height: 178px;
@@ -59,15 +59,14 @@ export const MissingProfilePhoto = styled(PeopleTilePhoto)`
     width: 120px;
   }
 
-    ${({ $portfolioPhoto }) =>
-      $portfolioPhoto &&
-      css`
-        width: auto;
-        height: 100%;
-        max-width: auto;
-        max-height: 163px;
-      `}
-  }
+  ${({ $portfolioPhoto }) =>
+    $portfolioPhoto &&
+    css`
+    width: auto;
+    height: 100%;
+    max-width: auto;
+    max-height: 163px;
+  `}
 `;
 
 export const MissingProfilePhotoIcon = styled(MissingPhotoIcon)`
