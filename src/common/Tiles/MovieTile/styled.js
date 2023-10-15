@@ -12,6 +12,8 @@ export const MovieTileContainer = styled.div`
   border-radius: 5px;
   background-color: ${({ theme }) => theme.breakpoints.mobile};
   box-shadow: 0px 4px 12px 0px ${boxShadowColor};
+  display: grid;
+  grid-template-rows: 5fr 3fr;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.narrow}) {
     max-width: 100%;
@@ -30,9 +32,9 @@ export const MovieTileContainer = styled.div`
 
 export const MoviePoster = styled.img`
   width: 100%;
-  height: 64.7%;
+  height: 100%;
   max-width: 292px;
-  max-height: 330px;
+  max-height: auto;
   border-radius: 5px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.narrow}) {
@@ -48,8 +50,8 @@ export const MoviePoster = styled.img`
 export const MissingMoviePoster = styled.div`
   background-color: ${({ theme }) => theme.color.silver};
   max-width: 360px;
-  max-height: 330px;
-  height: 64.7%;
+  max-height: auto;
+  height: 100%;
   width: 100%;
   max-height: auto;
   display: grid;
