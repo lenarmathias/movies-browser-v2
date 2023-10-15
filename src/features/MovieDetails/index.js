@@ -14,6 +14,7 @@ import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { imageUrl } from "../../common/imageUrl";
 import Loading from "../Actions/Loading";
 import MovieInfo from "./MovieInfo";
+import Error from "../Actions/Error";
 import { SmallTile } from "./MovieInfo/styled";
 
 const MovieDetails = () => {
@@ -58,6 +59,10 @@ const MovieDetails = () => {
   const getProductionCountries = (production_countries) => {
     return production_countries.map((country) => country.name).join(", ");
   };
+
+  if (status === "error") {
+    return <Error />;
+  }
 
   return status === "success" ? (
     <>
