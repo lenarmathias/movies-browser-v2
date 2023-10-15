@@ -6,7 +6,7 @@ export const SearchContainer = styled.div`
   width: 100%;
   height: 48px;
   padding: 12px 24px;
-  border: 1px solid ${({ theme }) => theme.color.grey};
+  border: 1px solid ${({ theme }) => theme.color.colorDivider};
   border-radius: 33px;
   background: ${({ theme }) => theme.color.white};
   display: flex;

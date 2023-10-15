@@ -43,15 +43,15 @@ export const SmallGreyText = styled.p`
     line-height: 130%;
 
     ${({ $paginationText }) =>
-      $paginationText &&
-      css`
+    $paginationText &&
+    css`
         font-size: 10px;
         line-height: 24px;
       `}
 
     ${({ $roleOrJob }) =>
-      $roleOrJob &&
-      css`
+    $roleOrJob &&
+    css`
         font-size: 13px;
         line-height: 130%;
       `}
@@ -95,8 +95,8 @@ export const SmallTile = styled.div`
     line-height: 110%;
 
     ${({ $pageButton }) =>
-      $pageButton &&
-      css`
+    $pageButton &&
+    css`
         height: 23px;
         padding: 8px 12px;
       `}
@@ -131,8 +131,8 @@ export const SectionHeading = styled.h2`
     font-size: 18px;
 
     ${({ $movieSection }) =>
-      $movieSection &&
-      css`
+    $movieSection &&
+    css`
         margin-top: 24px;
         margin-bottom: 16px;
         font-size: 20px;
