@@ -37,10 +37,6 @@ export const MoviePoster = styled.img`
   max-height: auto;
   border-radius: 5px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.narrow}) {
-    max-width: 100%;
-  }
-
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     width: 114px;
     height: 169px;
@@ -61,8 +57,7 @@ export const MissingMoviePoster = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     width: 114px;
-    max-height: 169px;
-    height: 100%;
+    height: 169px;
   }
 `;
 
