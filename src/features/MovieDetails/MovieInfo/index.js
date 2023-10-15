@@ -33,12 +33,12 @@ const MovieInfo = ({
         <Title>{title}</Title>
         <Year>{year}</Year>
         <RowContainer>
-          <ProductionSpan>{`Production: `}</ProductionSpan>
+          <ProductionSpan>Production:</ProductionSpan>
           <Countries>{countries}</Countries>
         </RowContainer>
         <RowContainer>
           <ReleaseSpan>Release date:</ReleaseSpan>
-          <Release>{` ${release}`}</Release>
+          <Release>{release}</Release>
         </RowContainer>
         <GenresContainer>{genres}</GenresContainer>
         <Rating votes={votes} rating={rating} $movieInfo />
