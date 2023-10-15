@@ -32,5 +32,5 @@ function* getSearchPeopleHandler({ payload: query }) {
 
 export function* watchFetchPeopleList() {
   yield takeLatest(fetchPeopleListLoad.type, getPopularPeopleHandler);
-  yield debounce(500, fetchSearchPeopleLoad.type, getSearchPeopleHandler);
+  yield debounce(1000, fetchSearchPeopleLoad.type, getSearchPeopleHandler);
 }
