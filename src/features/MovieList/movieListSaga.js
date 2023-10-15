@@ -34,5 +34,5 @@ function* getSearchMoviesHandler({ payload: query }) {
 
 export function* watchFetchMoviesList() {
   yield takeLatest(fetchMoviesListLoad.type, getPopularMoviesHandler);
-  yield debounce(2000, fetchSearchMoviesLoad.type, getSearchMoviesHandler);
+  yield debounce(1000, fetchSearchMoviesLoad.type, getSearchMoviesHandler);
 }

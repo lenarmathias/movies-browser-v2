@@ -12,7 +12,7 @@ const Error = () => (
         Please check your network connection and try again
       </Info>
       <Link to="/movies">
-          Back to home page
+        Back to home page
       </Link>
     </Container>
   </>

@@ -228,10 +228,3 @@ export const Votes = styled.div`
       }
     `}
 `;
-
-// ${({ $movieInfo }) =>
-//     $movieInfo &&
-//     css`
-//       @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-//       }
-//     `}

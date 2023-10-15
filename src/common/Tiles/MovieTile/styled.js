@@ -23,7 +23,7 @@ export const MovieTileContainer = styled.div`
         min-width: 288px;
         width: auto;
         min-height: auto;
-        height: 201px;
+        height: 100%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 16px;
