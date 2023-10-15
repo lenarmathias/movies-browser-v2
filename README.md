@@ -1,5 +1,7 @@
 # Movies Browser
 
+![Movie Browser screen](<img width="1280" alt="Zrzut ekranu 2023-10-15 o 23 47 21" src="https://github.com/lenarmathias/movies-browser/assets/122434234/4ca13384-1da8-40af-991b-c4886ce991d9">)
+
 ## Overview
 
 This project is a website that provides comprehensive information about movies, including popular films and details about actors. It offers a user-friendly interface to explore movie data, such as movie information, cast and crew details, and ratings. Users can also perform movie searches to find specific films of interest. The movie data is regularly updated via an API.
@@ -15,6 +17,37 @@ You can find the live version of Movies Browser project on GitHub Pages here:
 https://lenarmathias.github.io/movies-browser/
 
 ---
+
+## User Guide for Movie Browser
+
+Movie Browser is designed to showcase movies along with their ratings, actors, and crew. It allows users to search for movies and associated personnel, displaying detailed information about them, including the films in which they have participated.
+
+The application consists of two main sections:
+
+Movies
+
+People
+
+Movies:
+This section presents a list of popular movies.
+Clicking on a specific movie takes you to its dedicated page where you'll find:
+Detailed information about the movie
+Ratings
+Description
+Cast & crew listings
+A search feature is available to find movies of your interest.
+
+People:
+This section displays a list of popular personalities from the film industry.
+Clicking on an individual will lead you to their profile, where you'll find:
+Personal information
+A brief description
+Movies in which they have participated
+Each movie listed under a person's profile is clickable and redirects to that movie's page.
+A search feature allows users to find actors and crew members.
+
+Browsing & Selection:
+If you're in the mood to discover a movie for tonight's viewing, you can navigate to the 'movies' section. Thanks to the pagination feature, you can browse popular films, check their ratings, descriptions, and cast, allowing you to pick the perfect film for your evening.
 
 ## Features
 
