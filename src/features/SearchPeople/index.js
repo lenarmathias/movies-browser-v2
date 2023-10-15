@@ -11,6 +11,7 @@ import PeopleTile from "../../common/Tiles/PeopleTile";
 import Pagination from "../../common/Pagination";
 import Loading from "../Actions/Loading";
 import NotFound from "../Actions/NotFound";
+import Error from "../Actions/Error";
 import { PeopleList } from "../People/styled";
 import { SectionHeading } from "../../common/styled";
 
@@ -33,6 +34,10 @@ const SearchPeople = () => {
             dispatch(fetchSearchPeopleLoad(query, { page: selectedPage }));
         }
     }, [dispatch, query, selectedPage]);
+
+    if (status === "error") {
+        return <Error />;
+    }
 
     return (
         status === "loading" ? (

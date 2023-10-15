@@ -11,6 +11,7 @@ import MovieTile from "../../common/Tiles/MovieTile";
 import Pagination from "../../common/Pagination";
 import Loading from "../Actions/Loading";
 import NotFound from "../Actions/NotFound";
+import Error from "../Actions/Error";
 import { MovieListOrganizer } from "../MovieList/styled";
 import { SectionHeading } from "../../common/styled";
 
@@ -33,6 +34,10 @@ const SearchMovies = ({ movieGenres }) => {
             dispatch(fetchSearchMoviesLoad(query, { page: selectedPage }));
         }
     }, [dispatch, query, selectedPage]);
+
+    if (status === "error") {
+        return <Error />;
+    }
 
     return (
         status === "loading" ? (
