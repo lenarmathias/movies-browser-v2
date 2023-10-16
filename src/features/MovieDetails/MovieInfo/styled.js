@@ -81,6 +81,7 @@ export const Year = styled.div`
 export const RowContainer = styled.div`
   display: flex;
   align-items: center;
+  gap: 5px;
 `;
 
 export const ProductionSpan = styled.span`
