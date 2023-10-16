@@ -24,6 +24,6 @@ export const theme = {
     mobile: "900px",
     narrow: "950px",
     tabletMedium: "1050px",
-    tabletWide: "1280px",
+    tabletWide: "1200px",
   },
 };
