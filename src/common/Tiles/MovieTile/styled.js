@@ -22,10 +22,11 @@ export const MovieTileContainer = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     min-width: 288px;
     width: auto;
-    min-height: auto;
-    height: 201px;
+    height: 100%;
+    min-height: 201px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
     grid-gap: 16px;
   }
 `;
