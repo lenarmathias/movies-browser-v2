@@ -113,8 +113,14 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ## Contact
 
-If you have any questions or feedback regarding this project, please feel free to contact us:
+If you have any questions or feedback regarding this project, please feel free to contact me:
 
 - Maciej Lenartowicz GitHub: https://github.com/lenarmathias
-- Mateusz Grygorowicz GitHub: https://github.com/Mateusz-95
-- Kornel Kulwas GitHub: https://github.com/Speecter
+- Maciej Lenartowicz Email: lenarmathias@gmail.com
+
+> `Contributors to the original group project include:`
+>
+> - Mateusz Grygorowicz GitHub: https://github.com/Mateusz-95
+> - Kornel Kulwas GitHub: https://github.com/Speecter
+>
+> Original [Movies Browser](https://github.com/lenarmathias/movies-browser) project
