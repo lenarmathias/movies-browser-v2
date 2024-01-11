@@ -18,7 +18,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 You can find the live version of Movies Browser project on GitHub Pages here:
 
-https://lenarmathias.github.io/movies-browser/
+https://lenarmathias.github.io/movies-browser-v2/
 
 ---
 
