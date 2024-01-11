@@ -1,4 +1,4 @@
-# Movies Browser
+# Movies Browser v2
 
 ![Movie Browser screen](https://raw.githubusercontent.com/lenarmathias/movies-browser/screen-to-readme/src/images/screen.png)
 
