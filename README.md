@@ -6,6 +6,10 @@
 
 This project is a website that provides comprehensive information about movies, including popular films and details about actors. It offers a user-friendly interface to explore movie data, such as movie information, cast and crew details, and ratings. Users can also perform movie searches to find specific films of interest. The movie data is regularly updated via an API.
 
+> `Important Information`
+>
+> This project is my personal continuation of a group work project for the [YouCode](https://youcode.pl/frontend-developer/). You can find the original repository for the group project [here](https://github.com/lenarmathias/movies-browser).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ---
