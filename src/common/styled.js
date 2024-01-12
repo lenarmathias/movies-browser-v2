@@ -28,7 +28,7 @@ export const SmallGreyText = styled.p`
 
     ${({ $portfolioTextBlack }) =>
     $portfolioTextBlack &&
-    css`Z
+    css`
       color: ${({ theme }) => theme.color.blackSolid};
     `}
 
