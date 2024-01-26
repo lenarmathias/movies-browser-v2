@@ -1,27 +1,16 @@
-import { MovieDetailsWrapper } from "./styled";
+import { useMovieDetails } from "./useMovieDetails";
 import MovieTopInfo from "./MovieTopInfo";
-import MoviePeople from "./MoviePeople";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  getMovieId,
-  selectDetails,
-  selectStatus,
-  selectCredits,
-  fetchMovieDetailsLoad,
-} from "./movieDetailsSlice";
-import { useEffect } from "react";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
-import { imageUrl } from "../../common/imageUrl";
-import Loading from "../Actions/Loading";
 import MovieInfo from "./MovieInfo";
+import MoviePeople from "./MoviePeople";
+import Loading from "../Actions/Loading";
 import Error from "../Actions/Error";
+import { imageUrl } from "../../common/imageUrl";
+import { MovieDetailsWrapper } from "./styled";
 import { SmallTile } from "./MovieInfo/styled";
 
 const MovieDetails = () => {
-  const status = useSelector(selectStatus);
-  const dispatch = useDispatch();
-  const { id } = useParams();
   const {
+    status,
     title,
     backdrop_path,
     vote_average,
@@ -31,34 +20,12 @@ const MovieDetails = () => {
     production_countries,
     genres,
     overview,
-  } = useSelector(selectDetails) ?? {};
-
-  const selectedMoviePeople = useSelector(selectCredits);
-  const movieCast = selectedMoviePeople.cast;
-  const movieCrew = selectedMoviePeople.crew;
-
-  useEffect(() => {
-    dispatch(fetchMovieDetailsLoad());
-  }, [dispatch]);
-
-  useEffect(() => {
-    dispatch(getMovieId(id));
-  }, [status, dispatch, id]);
-
-  const getReleaseYear = (releaseDate) => {
-    const dateParts = releaseDate.split("-");
-    return dateParts[0];
-  };
-
-  const getFullReleaseDate = (releaseDate) => {
-    const dateParts = releaseDate.split("-");
-    const fullDate = dateParts.join(".");
-    return fullDate;
-  };
-
-  const getProductionCountries = (production_countries) => {
-    return production_countries.map((country) => country.name).join(", ");
-  };
+    movieCast,
+    movieCrew,
+    getReleaseYear,
+    getFullReleaseDate,
+    getProductionCountries
+  } = useMovieDetails();
 
   if (status === "error") {
     return <Error />;
