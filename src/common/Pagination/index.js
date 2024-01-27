@@ -1,9 +1,6 @@
 import { usePagination } from "./usePagination";
-import FirstPageButton from "./Buttons/FirstPageButton";
-import PreviousPageButton from "./Buttons/PreviousPageButton";
+import PaginationButton from "./PaginationButton";
 import MiddlePanel from "./MiddlePanel";
-import NextPageButton from "./Buttons/NextPageButton";
-import LastPageButton from "./Buttons/LastPageButton";
 import {
   PaginationContainer,
   PageButtonsContainer,
@@ -27,29 +24,41 @@ const Pagination = ({
     currentPage !== undefined && (
       <PaginationContainer>
         <PageButtonsContainer>
-          <FirstPageButton
+          <PaginationButton
             currentPage={currentPage}
             buttonFunction={goToFirstPage}
+            backButtons
+            boundryButton
+            buttonText="First"
           />
-          <PreviousPageButton
+          <PaginationButton
             currentPage={currentPage}
             buttonFunction={goToPreviousPage}
+            backButtons
+            buttonText="Previous"
           />
         </PageButtonsContainer>
+
         <MiddlePanel
           currentPage={currentPage}
           totalPages={totalPages}
         />
+
         <PageButtonsContainer>
-          <NextPageButton
+          <PaginationButton
             totalPages={totalPages}
             currentPage={currentPage}
             buttonFunction={goToNextPage}
+            forthButtons
+            buttonText="Next"
           />
-          <LastPageButton
+          <PaginationButton
             totalPages={totalPages}
             currentPage={currentPage}
             buttonFunction={goToLastPage}
+            boundryButton
+            forthButtons
+            buttonText="Last"
           />
         </PageButtonsContainer>
       </PaginationContainer>
