@@ -1,3 +1,4 @@
+import { usePagination } from "./usePagination";
 import FirstPageButton from "./Buttons/FirstPageButton";
 import PreviousPageButton from "./Buttons/PreviousPageButton";
 import MiddlePanel from "./MiddlePanel";
@@ -11,33 +12,49 @@ import {
 const Pagination = ({
   totalPages,
   currentPage
-}) => (
-  currentPage !== undefined && (
-    <PaginationContainer>
-      <PageButtonsContainer>
-        <FirstPageButton
+}) => {
+  const {
+    goToFirstPage,
+    goToPreviousPage,
+    goToNextPage,
+    goToLastPage
+  } = usePagination({
+    currentPage,
+    totalPages
+  });
+
+  return (
+    currentPage !== undefined && (
+      <PaginationContainer>
+        <PageButtonsContainer>
+          <FirstPageButton
+            currentPage={currentPage}
+            buttonFunction={goToFirstPage}
+          />
+          <PreviousPageButton
+            currentPage={currentPage}
+            buttonFunction={goToPreviousPage}
+          />
+        </PageButtonsContainer>
+        <MiddlePanel
           currentPage={currentPage}
-        />
-        <PreviousPageButton
-          currentPage={currentPage}
-        />
-      </PageButtonsContainer>
-      <MiddlePanel
-        currentPage={currentPage}
-        totalPages={totalPages}
-      />
-      <PageButtonsContainer>
-        <NextPageButton
           totalPages={totalPages}
-          currentPage={currentPage}
         />
-        <LastPageButton
-          totalPages={totalPages}
-          currentPage={currentPage}
-        />
-      </PageButtonsContainer>
-    </PaginationContainer>
+        <PageButtonsContainer>
+          <NextPageButton
+            totalPages={totalPages}
+            currentPage={currentPage}
+            buttonFunction={goToNextPage}
+          />
+          <LastPageButton
+            totalPages={totalPages}
+            currentPage={currentPage}
+            buttonFunction={goToLastPage}
+          />
+        </PageButtonsContainer>
+      </PaginationContainer>
+    )
   )
-);
+};
 
 export default Pagination;
