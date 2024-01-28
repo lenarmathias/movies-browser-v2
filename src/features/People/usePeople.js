@@ -12,7 +12,7 @@ import {
     selectPage,
     resetPage
 } from "../../common/Pagination/paginationSlice";
-import { useQueryParameter } from "../../common/NavigationBar/Search/queryParameter";
+import { useQueryParameter } from "../../common/NavigationBar/SearchBar/queryParameter";
 
 export const usePeople = () => {
     const dispatch = useDispatch();

@@ -1,5 +1,5 @@
 import LogoAndButtons from "./LogoAndButtons";
-import Search from "./Search";
+import Search from "./SearchBar";
 import {
   NavigationBarContainer,
   NavigationBarWrapper,

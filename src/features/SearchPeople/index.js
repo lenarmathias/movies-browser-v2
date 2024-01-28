@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useQueryParameter } from "../../common/NavigationBar/Search/queryParameter";
+import { useQueryParameter } from "../../common/NavigationBar/SearchBar/queryParameter";
 import {
     fetchSearchPeopleLoad,
     selectSearchResults,

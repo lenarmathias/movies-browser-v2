@@ -13,7 +13,7 @@ import {
 } from "./queryParameter";
 import { resetPage } from "../../Pagination/paginationSlice";
 
-const Search = () => {
+const SearchBar = () => {
   const dispatch = useDispatch();
   const moviesMatch = useRouteMatch("/movies");
   const peopleMatch = useRouteMatch("/people");
@@ -46,4 +46,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default SearchBar;
