@@ -5,16 +5,13 @@ import {
   NavigationBarWrapper,
 } from "./styled";
 
-const NavigationBar = () => {
-
-  return (
-    <NavigationBarContainer>
-      <NavigationBarWrapper>
-        <LogoAndButtons />
-        <Search />
-      </NavigationBarWrapper>
-    </NavigationBarContainer >
-  )
-};
+const NavigationBar = () => (
+  <NavigationBarContainer>
+    <NavigationBarWrapper>
+      <LogoAndButtons />
+      <Search />
+    </NavigationBarWrapper>
+  </NavigationBarContainer >
+);
 
 export default NavigationBar;

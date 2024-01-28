@@ -9,38 +9,35 @@ import {
     StyledNavigationLink
 } from "./styled";
 
-export const LogoAndButtons = ({ toMovies }) => {
-
-    return (
-        <NavigationButtonsWrapper>
-            <HeaderContainer>
-                <LogoNavigationLink
+export const LogoAndButtons = () => (
+    <NavigationButtonsWrapper>
+        <HeaderContainer>
+            <LogoNavigationLink
+                to="/movies"
+            >
+                <HeaderLogo />
+                <Heading>
+                    Movies Browser
+                </Heading>
+            </LogoNavigationLink>
+        </HeaderContainer>
+        <Navigation>
+            <NavigationItem>
+                <StyledNavigationLink
                     to="/movies"
                 >
-                    <HeaderLogo />
-                    <Heading>
-                        Movies Browser
-                    </Heading>
-                </LogoNavigationLink>
-            </HeaderContainer>
-            <Navigation>
-                <NavigationItem>
-                    <StyledNavigationLink
-                        to="/movies"
-                    >
-                        Movies
-                    </StyledNavigationLink>
-                </NavigationItem>
-                <NavigationItem>
-                    <StyledNavigationLink
-                        to="/people"
-                    >
-                        People
-                    </StyledNavigationLink>
-                </NavigationItem>
-            </Navigation>
-        </NavigationButtonsWrapper>
-    );
-};
+                    Movies
+                </StyledNavigationLink>
+            </NavigationItem>
+            <NavigationItem>
+                <StyledNavigationLink
+                    to="/people"
+                >
+                    People
+                </StyledNavigationLink>
+            </NavigationItem>
+        </Navigation>
+    </NavigationButtonsWrapper>
+);
 
 export default LogoAndButtons
