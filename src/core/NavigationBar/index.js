@@ -1,5 +1,5 @@
 import LogoAndButtons from "./LogoAndButtons";
-import Search from "./SearchBar";
+import SearchBar from "./SearchBar";
 import {
   NavigationBarContainer,
   NavigationBarWrapper,
@@ -9,7 +9,7 @@ const NavigationBar = () => (
   <NavigationBarContainer>
     <NavigationBarWrapper>
       <LogoAndButtons />
-      <Search />
+      <SearchBar />
     </NavigationBarWrapper>
   </NavigationBarContainer >
 );
