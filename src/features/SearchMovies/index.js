@@ -1,12 +1,4 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useQueryParameter } from "../../common/NavigationBar/SearchBar/queryParameter";
-import {
-    fetchSearchMoviesLoad,
-    selectSearchResults,
-    selectStatus
-} from "../MovieList/movieListSlice";
-import { selectPage } from "../../common/Pagination/paginationSlice";
+import { useSearchMovies } from "./useSearchMovies";
 import MovieTile from "../../common/Tiles/MovieTile";
 import Pagination from "../../common/Pagination";
 import Loading from "../Actions/Loading";
@@ -16,24 +8,14 @@ import { MovieListOrganizer } from "../MovieList/styled";
 import { SectionHeading } from "../../common/styled";
 
 const SearchMovies = ({ movieGenres }) => {
-    const dispatch = useDispatch();
-    const query = useQueryParameter("search");
-
-    const status = useSelector(selectStatus);
-    const selectedPage = useSelector(selectPage);
-    const searchedResult = useSelector(selectSearchResults);
-
-    const searchedMovies = searchedResult.results;
-
-    const resultCurrentPage = searchedResult.page;
-    const resultTotalPages = searchedResult.total_pages;
-    const totalResults = searchedResult.total_results;
-
-    useEffect(() => {
-        if (query) {
-            dispatch(fetchSearchMoviesLoad(query, { page: selectedPage }));
-        }
-    }, [dispatch, query, selectedPage]);
+    const {
+        status,
+        query,
+        searchedMovies,
+        resultCurrentPage,
+        resultTotalPages,
+        totalResults
+    } = useSearchMovies();
 
     if (status === "error") {
         return <Error />;
