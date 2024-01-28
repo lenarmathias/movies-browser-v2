@@ -1,6 +1,6 @@
 import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import NavigationBar from "./common/NavigationBar";
+import NavigationBar from "./core/NavigationBar";
 import MovieList from "./features/MovieList";
 import People from "./features/People";
 import Profile from "./features/Profile";

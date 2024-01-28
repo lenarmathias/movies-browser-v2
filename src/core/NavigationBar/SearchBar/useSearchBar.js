@@ -4,8 +4,8 @@ import { searchQueryParamName } from "./searchQueryParamName";
 import {
     useQueryParameter,
     useReplaceQueryParameter
-} from "../../queryParameter";
-import { resetPage } from "../../Pagination/paginationSlice";
+} from "../../../common/queryParameter";
+import { resetPage } from "../../../common/Pagination/paginationSlice";
 
 export const useSearchBar = () => {
     const dispatch = useDispatch();
