@@ -4,7 +4,7 @@ import { searchQueryParamName } from "./searchQueryParamName";
 import {
     useQueryParameter,
     useReplaceQueryParameter
-} from "./queryParameter";
+} from "../../queryParameter";
 import { resetPage } from "../../Pagination/paginationSlice";
 
 export const useSearchBar = () => {

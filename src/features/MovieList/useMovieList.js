@@ -12,7 +12,7 @@ import {
     selectPage,
     resetPage
 } from "../../common/Pagination/paginationSlice";
-import { useQueryParameter } from "../../common/NavigationBar/SearchBar/queryParameter";
+import { useQueryParameter } from "../../common/queryParameter";
 
 export const useMovieList = () => {
     const dispatch = useDispatch();
