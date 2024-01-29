@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import { ReactComponent as VectorIcon } from "../../images/vectorIcon.svg";
 
 export const PaginationContainer = styled.div`
   margin-top: 40px;
@@ -31,52 +30,6 @@ export const PageButtonsContainer = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     grid-gap: 8px;
-  }
-`;
-
-export const PageVectorIcon = styled(VectorIcon)`
-  width: 7px;
-  height: 11px;
-
-  ${({ $previousPage }) =>
-    $previousPage &&
-    css`
-      transform: scaleX(-1);
-    `}
-
-  ${({ $mobileOnly }) =>
-    $mobileOnly &&
-    css`
-      display: none;
-    `}
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    width: 5px;
-    height: 8px;
-
-    ${({ $mobileOnly }) =>
-    $mobileOnly &&
-    css`
-        display: block;
-      `}
-  }
-`;
-
-export const ButtonContent = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    grid-gap: 4px;
-  }
-`;
-
-export const MobileHide = styled.div`
-  display: block;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    display: none;
   }
 `;
 

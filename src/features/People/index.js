@@ -1,58 +1,21 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
-import {
-  fetchPeopleListLoad,
-  selectPeopleList,
-  selectStatus,
-  selectTotalPeoplePages,
-  selectPeopleListState
-} from "./peopleSlice";
-import {
-  selectPage,
-  resetPage
-} from "../../common/Pagination/paginationSlice";
-import { useQueryParameter } from "../../common/NavigationBar/Search/queryParameter";
+import { usePeople } from "./usePeople";
 import PeopleTile from "../../common/Tiles/PeopleTile";
 import Pagination from "../../common/Pagination";
-import Loading from "../Actions/Loading";
 import SearchPeople from "../SearchPeople";
+import Loading from "../Actions/Loading";
 import Error from "../Actions/Error";
 import { PeopleList } from "./styled";
 import { SectionHeading } from "../../common/styled";
 
 const People = () => {
-  const dispatch = useDispatch();
-  const history = useHistory();
+  const {
+    status,
+    popularPeople,
+    totalPages,
+    currentPage,
+    query
+  } = usePeople();
 
-  const status = useSelector(selectStatus);
-  const popularPeople = useSelector(selectPeopleList);
-
-  const totalPages = useSelector(selectTotalPeoplePages);
-  const { currentPage } = useSelector(selectPeopleListState);
-  const selectedPage = useSelector(selectPage);
-
-  useEffect(() => {
-    const unlisten = history.listen(() => {
-      dispatch(resetPage());
-    });
-
-    return () => {
-      unlisten();
-    };
-  }, [dispatch, history]);
-
-  useEffect(() => {
-    dispatch(fetchPeopleListLoad({ page: currentPage }));
-  }, [dispatch, currentPage]);
-
-  useEffect(() => {
-    if (currentPage !== selectedPage) {
-      dispatch(fetchPeopleListLoad({ page: selectedPage }));
-    }
-  }, [dispatch, currentPage, selectedPage]);
-
-  const query = useQueryParameter("search");
   if (query) {
     return <SearchPeople />;
   }

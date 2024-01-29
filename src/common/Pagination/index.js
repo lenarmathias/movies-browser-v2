@@ -1,8 +1,6 @@
-import FirstPageButton from "./Buttons/FirstPageButton";
-import PreviousPageButton from "./Buttons/PreviousPageButton";
+import { usePagination } from "./usePagination";
+import PaginationButton from "./PaginationButton";
 import MiddlePanel from "./MiddlePanel";
-import NextPageButton from "./Buttons/NextPageButton";
-import LastPageButton from "./Buttons/LastPageButton";
 import {
   PaginationContainer,
   PageButtonsContainer,
@@ -11,33 +9,61 @@ import {
 const Pagination = ({
   totalPages,
   currentPage
-}) => (
-  currentPage !== undefined && (
-    <PaginationContainer>
-      <PageButtonsContainer>
-        <FirstPageButton
+}) => {
+  const {
+    goToFirstPage,
+    goToPreviousPage,
+    goToNextPage,
+    goToLastPage
+  } = usePagination({
+    currentPage,
+    totalPages
+  });
+
+  return (
+    currentPage !== undefined && (
+      <PaginationContainer>
+        <PageButtonsContainer>
+          <PaginationButton
+            currentPage={currentPage}
+            buttonFunction={goToFirstPage}
+            backButtons
+            boundryButton
+            buttonText="First"
+          />
+          <PaginationButton
+            currentPage={currentPage}
+            buttonFunction={goToPreviousPage}
+            backButtons
+            buttonText="Previous"
+          />
+        </PageButtonsContainer>
+
+        <MiddlePanel
           currentPage={currentPage}
-        />
-        <PreviousPageButton
-          currentPage={currentPage}
-        />
-      </PageButtonsContainer>
-      <MiddlePanel
-        currentPage={currentPage}
-        totalPages={totalPages}
-      />
-      <PageButtonsContainer>
-        <NextPageButton
           totalPages={totalPages}
-          currentPage={currentPage}
         />
-        <LastPageButton
-          totalPages={totalPages}
-          currentPage={currentPage}
-        />
-      </PageButtonsContainer>
-    </PaginationContainer>
+
+        <PageButtonsContainer>
+          <PaginationButton
+            totalPages={totalPages}
+            currentPage={currentPage}
+            buttonFunction={goToNextPage}
+            forthButtons
+            buttonText="Next"
+          />
+          <PaginationButton
+            totalPages={totalPages}
+            currentPage={currentPage}
+            buttonFunction={goToLastPage}
+            boundryButton
+            forthButtons
+            buttonText="Last"
+          />
+        </PageButtonsContainer>
+      </PaginationContainer>
+    )
   )
-);
+};
 
 export default Pagination;

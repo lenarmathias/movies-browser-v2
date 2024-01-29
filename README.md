@@ -1,6 +1,6 @@
 # Movies Browser v2
 
-![Movie Browser screen](https://raw.githubusercontent.com/lenarmathias/movies-browser/screen-to-readme/src/images/screen.png)
+![Movie Browser screen](./public/images/app-screenshot.jpeg)
 
 ## Overview
 
