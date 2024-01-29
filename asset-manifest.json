@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.js": "/movies-browser-v2/static/js/main.eb41b439.js",
+    "main.js": "/movies-browser-v2/static/js/main.c72c9907.js",
     "static/js/787.94542015.chunk.js": "/movies-browser-v2/static/js/787.94542015.chunk.js",
-    "static/media/Picture.svg": "/movies-browser-v2/static/media/Picture.42482d135007cb6d7ef317beb4f6bdbc.svg",
-    "static/media/shape-star.svg": "/movies-browser-v2/static/media/shape-star.d2197599d8d1eb8e19053caa50162255.svg",
-    "static/media/missingProfilePhotoIcon.svg": "/movies-browser-v2/static/media/missingProfilePhotoIcon.99f0bfab871c9e11fe5c69396f35f85d.svg",
-    "static/media/warning.svg": "/movies-browser-v2/static/media/warning.162b2f4bc39e89b23838a155d4a166f6.svg",
+    "static/media/Picture.svg": "/movies-browser-v2/static/media/Picture.7e70f9228bb9032f1311c56d322a9c0c.svg",
+    "static/media/shape-star.svg": "/movies-browser-v2/static/media/shape-star.94f86b44be5aeb813a56e243e0c884e0.svg",
+    "static/media/missingProfilePhotoIcon.svg": "/movies-browser-v2/static/media/missingProfilePhotoIcon.a4185423ee5df777774f9ef4828d67dd.svg",
+    "static/media/warning.svg": "/movies-browser-v2/static/media/warning.3293de933d5f699e3046e09a8ec081ed.svg",
     "index.html": "/movies-browser-v2/index.html",
-    "static/media/missingMoviePoster.svg": "/movies-browser-v2/static/media/missingMoviePoster.18e5c9f5b7caa32477f06440378f37e6.svg",
-    "static/media/logo.svg": "/movies-browser-v2/static/media/logo.0950f4847a5eedec8b8c4314898b53a8.svg",
-    "static/media/vectorIcon.svg": "/movies-browser-v2/static/media/vectorIcon.d61c741d63a4f1e28a62095b1297392f.svg",
-    "static/media/searchIcon.svg": "/movies-browser-v2/static/media/searchIcon.ed3f24f20cda9bb4e005406a3f864acb.svg",
-    "static/media/spinner.svg": "/movies-browser-v2/static/media/spinner.38a9d4599e0291c343b1db80863b96f5.svg",
-    "main.eb41b439.js.map": "/movies-browser-v2/static/js/main.eb41b439.js.map",
+    "static/media/missingMoviePoster.svg": "/movies-browser-v2/static/media/missingMoviePoster.2bd9d62fb2173d90b920d591bb8a4ace.svg",
+    "static/media/logo.svg": "/movies-browser-v2/static/media/logo.431749ca51e30bd407fb3048053159a9.svg",
+    "static/media/vectorIcon.svg": "/movies-browser-v2/static/media/vectorIcon.f77332196f1887fb79f8ff26f5bb66fc.svg",
+    "static/media/searchIcon.svg": "/movies-browser-v2/static/media/searchIcon.7920afd0b926ba1235785f5b4ddff2ab.svg",
+    "static/media/spinner.svg": "/movies-browser-v2/static/media/spinner.6a9ed36baf5c92a90be80f32aff73de0.svg",
+    "main.c72c9907.js.map": "/movies-browser-v2/static/js/main.c72c9907.js.map",
     "787.94542015.chunk.js.map": "/movies-browser-v2/static/js/787.94542015.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.eb41b439.js"
+    "static/js/main.c72c9907.js"
   ]
 }
