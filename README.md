@@ -1,10 +1,14 @@
-# Movies Browser
+# Movies Browser v2
 
 ![Movie Browser screen](./public/images/app-screenshot.jpeg)
 
 ## Overview
 
 This project is a website that provides comprehensive information about movies, including popular films and details about actors. It offers a user-friendly interface to explore movie data, such as movie information, cast and crew details, and ratings. Users can also perform movie searches to find specific films of interest. The movie data is regularly updated via an API.
+
+> `Important Information`
+>
+> This project is my personal continuation of a group work project for the [YouCode](https://youcode.pl/frontend-developer/). You can find the original repository for the group project [here](https://github.com/lenarmathias/movies-browser).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -14,7 +18,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 You can find the live version of Movies Browser project on GitHub Pages here:
 
-https://lenarmathias.github.io/movies-browser/
+https://lenarmathias.github.io/movies-browser-v2/
 
 ---
 
@@ -109,8 +113,14 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ## Contact
 
-If you have any questions or feedback regarding this project, please feel free to contact us:
+If you have any questions or feedback regarding this project, please feel free to contact me:
 
 - Maciej Lenartowicz GitHub: https://github.com/lenarmathias
-- Mateusz Grygorowicz GitHub: https://github.com/Mateusz-95
-- Kornel Kulwas GitHub: https://github.com/Speecter
+- Maciej Lenartowicz Email: lenarmathias@gmail.com
+
+> `Contributors to the original group project include:`
+>
+> - Mateusz Grygorowicz GitHub: https://github.com/Mateusz-95
+> - Kornel Kulwas GitHub: https://github.com/Speecter
+>
+> Original [Movies Browser](https://github.com/lenarmathias/movies-browser) project

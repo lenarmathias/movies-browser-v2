@@ -37,6 +37,7 @@ export const SearchIcon = styled(Search)`
 
 export const SearchInput = styled.input`
   color: ${({ theme }) => theme.color.darkerGrey};
+  width: 100%;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
