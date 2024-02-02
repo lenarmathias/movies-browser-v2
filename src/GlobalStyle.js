@@ -30,4 +30,8 @@ export const GlobalStyles = createGlobalStyle`
   button:disabled {
     cursor: not-allowed;
   }
+
+  a, button {
+    -webkit-tap-highlight-color: transparent;
+  }
 `;
