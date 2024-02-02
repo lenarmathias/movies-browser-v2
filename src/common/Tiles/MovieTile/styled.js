@@ -15,10 +15,6 @@ export const MovieTileContainer = styled.div`
   display: grid;
   grid-template-rows: repeat(2, max-content);
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.narrow}) {
-    max-width: 100%;
-  }
-
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     min-width: 288px;
     width: auto;

@@ -10,7 +10,8 @@ export const MovieListOrganizer = styled.div`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.narrow}) {
-    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    grid-template-columns: repeat(2, max-content);
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
