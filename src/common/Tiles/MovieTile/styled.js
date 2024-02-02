@@ -16,10 +16,8 @@ export const MovieTileContainer = styled.div`
   grid-template-rows: repeat(2, max-content);
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    min-width: 288px;
-    width: auto;
-    height: 100%;
-    min-height: 201px;
+    max-width: 100%;
+    min-height: auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
@@ -34,8 +32,10 @@ export const MoviePoster = styled.img`
   border-radius: 5px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    width: 114px;
-    height: 169px;
+    min-width: 114px;
+    min-height: auto;
+    max-width: 292px;
+    max-height: auto;
   }
 `;
 
@@ -77,6 +77,7 @@ export const SeparateFlexContainer = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     display: block;
+    height: fit-content;
   }
 `;
 
