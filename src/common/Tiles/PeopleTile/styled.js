@@ -26,7 +26,7 @@ export const PeopleTilePhoto = styled.img`
   width: 100%;
   max-width: 177px;
   border-radius: 5px;
-  max-height: 237px;
+  max-height: auto;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     height: 178px;
