@@ -4,7 +4,7 @@ import { boxShadowColor } from "../../styled";
 
 export const PeopleTileContainer = styled.div`
   background-color: ${({ theme }) => theme.color.white};
-  width: 100%;
+  width: fit-content;
   min-height: auto;
   height: 100%;
   display: grid;
@@ -14,12 +14,6 @@ export const PeopleTileContainer = styled.div`
   box-shadow: 0px 4px 12px 0px ${boxShadowColor};
   align-items: baseline;
   margin: auto;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    padding: 8px;
-    min-height: 245px;
-    width: 136px;
-  }
 `;
 
 export const PeopleTilePhoto = styled.img`
@@ -28,9 +22,8 @@ export const PeopleTilePhoto = styled.img`
   border-radius: 5px;
   max-height: auto;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    height: 178px;
-    width: 120px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    max-width: 100%;
   }
 `;
 
