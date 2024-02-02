@@ -5,8 +5,7 @@ import { boxShadowColor } from "../../styled";
 export const PeopleTileContainer = styled.div`
   background-color: ${({ theme }) => theme.color.white};
   width: 100%;
-  max-width: 208px;
-  min-height: 338px;
+  min-height: auto;
   height: 100%;
   display: grid;
   grid-template-rows: auto, repeat(2, 1fr);
