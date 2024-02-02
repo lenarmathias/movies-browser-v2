@@ -12,8 +12,8 @@ export const MovieTileContainer = styled.div`
   border-radius: 5px;
   background-color: ${({ theme }) => theme.breakpoints.mobile};
   box-shadow: 0px 4px 12px 0px ${boxShadowColor};
-  display: grid;
-  grid-template-rows: repeat(2, max-content);
+  display: flex;
+  flex-direction: column;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     max-width: 100%;
