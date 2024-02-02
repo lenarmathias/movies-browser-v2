@@ -24,8 +24,8 @@ const MovieTile = ({ movie, movieGenres }) => {
   };
 
   return (
-    <MovieTileContainer>
-      <ContentLink to={`/movies/${movie.id}`}>
+    <ContentLink to={`/movies/${movie.id}`}>
+      <MovieTileContainer>
         {movie.poster_path ? (
           <MoviePoster src={imageUrl + movie.poster_path} alt="Movie Poster" />
         ) : (
@@ -33,37 +33,34 @@ const MovieTile = ({ movie, movieGenres }) => {
             <MissingMoviePosterIcon />
           </MissingMoviePoster>
         )}
-      </ContentLink>
-      <SeparateFlexContainer>
-        <MovieInfoContainer>
-          <ContentLink to={`/movies/${movie.id}`}>
+        <SeparateFlexContainer>
+          <MovieInfoContainer>
             <MovieTitle>{movie.title}</MovieTitle>
-          </ContentLink>
-          <SmallGreyText>
-            {movie.character || movie.job
-              ? `${movie.character || movie.job} ${
-                  movie.release_date
-                    ? `(${getReleaseYear(movie.release_date)})`
-                    : ""
+            <SmallGreyText>
+              {movie.character || movie.job
+                ? `${movie.character || movie.job} ${movie.release_date
+                  ? `(${getReleaseYear(movie.release_date)})`
+                  : ""
                 }`
-              : getReleaseYear(movie.release_date)}
-          </SmallGreyText>
-          <GenresContainer>
-            {movie.genre_ids &&
-              movie.genre_ids.map((genreId) => (
-                <SmallTile key={genreId}>
-                  {mapGenreIdToNames(genreId)}
-                </SmallTile>
-              ))}
-          </GenresContainer>
-        </MovieInfoContainer>
-        <Rating
-          votes={movie.vote_count}
-          rating={movie.vote_average}
-          $movieTileDetails
-        />
-      </SeparateFlexContainer>
-    </MovieTileContainer>
+                : getReleaseYear(movie.release_date)}
+            </SmallGreyText>
+            <GenresContainer>
+              {movie.genre_ids &&
+                movie.genre_ids.map((genreId) => (
+                  <SmallTile key={genreId}>
+                    {mapGenreIdToNames(genreId)}
+                  </SmallTile>
+                ))}
+            </GenresContainer>
+          </MovieInfoContainer>
+          <Rating
+            votes={movie.vote_count}
+            rating={movie.vote_average}
+            $movieTileDetails
+          />
+        </SeparateFlexContainer>
+      </MovieTileContainer>
+    </ContentLink>
   );
 };
 

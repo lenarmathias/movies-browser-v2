@@ -7,13 +7,13 @@ export const MovieTileContainer = styled.div`
   min-width: 250px;
   max-height: auto;
   min-height: 500px;
-  height: auto;
+  height: 100%;
   padding: 16px;
   border-radius: 5px;
   background-color: ${({ theme }) => theme.breakpoints.mobile};
   box-shadow: 0px 4px 12px 0px ${boxShadowColor};
   display: grid;
-  grid-template-rows: 5fr 3fr;
+  grid-template-rows: repeat(2, max-content);
 
   @media (max-width: ${({ theme }) => theme.breakpoints.narrow}) {
     max-width: 100%;
@@ -33,7 +33,6 @@ export const MovieTileContainer = styled.div`
 
 export const MoviePoster = styled.img`
   width: 100%;
-  height: 100%;
   max-width: 292px;
   max-height: auto;
   border-radius: 5px;
