@@ -22,7 +22,6 @@ export const Wrapper = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     height: 400px;
-    margin-top: 12px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
@@ -116,7 +115,7 @@ export const Poster = styled.div`
       ),
       url(${({ background }) => background});
     background-position: center;
-    background-size: 100% 100%;
+    background-size: auto 100%;
     background-repeat: no-repeat;
     opacity: 0;
     animation: ${fadeIn} 2s forwards;

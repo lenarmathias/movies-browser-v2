@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ReactComponent as MissingPosterIcon } from "../../../images/missingMoviePoster.svg";
 import { boxShadowColor } from "../../styled";
 
@@ -7,23 +7,17 @@ export const MovieTileContainer = styled.div`
   min-width: 250px;
   max-height: auto;
   min-height: 500px;
-  height: auto;
+  height: 100%;
   padding: 16px;
   border-radius: 5px;
   background-color: ${({ theme }) => theme.breakpoints.mobile};
   box-shadow: 0px 4px 12px 0px ${boxShadowColor};
-  display: grid;
-  grid-template-rows: 5fr 3fr;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.narrow}) {
-    max-width: 100%;
-  }
+  display: flex;
+  flex-direction: column;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    min-width: 288px;
-    width: auto;
-    height: 100%;
-    min-height: 201px;
+    max-width: 100%;
+    min-height: auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
@@ -33,21 +27,22 @@ export const MovieTileContainer = styled.div`
 
 export const MoviePoster = styled.img`
   width: 100%;
-  height: 100%;
   max-width: 292px;
   max-height: auto;
   border-radius: 5px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    width: 114px;
-    height: 169px;
+    min-width: 114px;
+    min-height: auto;
+    max-width: 292px;
+    max-height: auto;
   }
 `;
 
 export const MissingMoviePoster = styled.div`
   background-color: ${({ theme }) => theme.color.silver};
   max-width: 360px;
-  max-height: auto;
+  max-height: 70%;
   height: 100%;
   width: 100%;
   max-height: auto;
@@ -57,9 +52,25 @@ export const MissingMoviePoster = styled.div`
   border-radius: 5px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    width: 114px;
-    height: 169px;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 60% 0;
   }
+
+  ${({ $movieDetails }) =>
+    $movieDetails &&
+    css`
+      width: 100%;
+      height: 100%;
+      max-width: 399px;
+      max-height: 564px;
+      padding: 0 50px;
+
+      @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    `}
 `;
 
 export const MissingMoviePosterIcon = styled(MissingPosterIcon)`
@@ -82,6 +93,7 @@ export const SeparateFlexContainer = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     display: block;
+    height: fit-content;
   }
 `;
 
