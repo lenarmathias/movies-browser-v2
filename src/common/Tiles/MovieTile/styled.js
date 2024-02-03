@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ReactComponent as MissingPosterIcon } from "../../../images/missingMoviePoster.svg";
 import { boxShadowColor } from "../../styled";
 
@@ -56,6 +56,21 @@ export const MissingMoviePoster = styled.div`
     max-height: 100%;
     padding: 60% 0;
   }
+
+  ${({ $movieDetails }) =>
+    $movieDetails &&
+    css`
+      width: 100%;
+      height: 100%;
+      max-width: 399px;
+      max-height: 564px;
+      padding: 0 50px;
+
+      @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    `}
 `;
 
 export const MissingMoviePosterIcon = styled(MissingPosterIcon)`

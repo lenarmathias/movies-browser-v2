@@ -16,7 +16,6 @@ export const Wrapper = styled.div`
     grid-template-areas:
       "poster info"
       "description description";
-    grid-template-columns: auto 1fr;
     padding: 16px;
     margin-top: 16px;
   }
@@ -30,8 +29,8 @@ export const Poster = styled.img`
   grid-area: poster;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    width: 114px;
-    height: 169px;
+    max-width: auto;
+    max-height: 100%;
   }
 `;
 

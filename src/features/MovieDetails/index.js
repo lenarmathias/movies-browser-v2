@@ -45,7 +45,7 @@ const MovieDetails = () => {
           description={overview}
           votes={vote_count}
           rating={Number(vote_average)}
-          smallImgUrl={imageUrl + poster_path}
+          poster_path={poster_path}
           title={title}
           year={getReleaseYear(release_date)}
           release={getFullReleaseDate(release_date)}
