@@ -4,7 +4,7 @@ import { boxShadowColor } from "../../styled";
 
 export const PeopleTileContainer = styled.div`
   background-color: ${({ theme }) => theme.color.white};
-  width: fit-content;
+  width: 100%;
   min-height: auto;
   height: 100%;
   display: grid;
@@ -32,10 +32,9 @@ export const MissingProfilePhoto = styled(PeopleTilePhoto)`
   display: grid;
   align-items: center;
   justify-content: center;
-  width: 100%;
   height: 100%;
-  max-width: 177px;
-  height: 237px;
+  padding: 50% 0;
+  max-height: 339px;
 
   ${({ $portfolioPhoto }) =>
     $portfolioPhoto &&
@@ -47,8 +46,7 @@ export const MissingProfilePhoto = styled(PeopleTilePhoto)`
     `}
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    height: 178px;
-    width: 120px;
+    padding: 60% 0;
   }
 
   ${({ $portfolioPhoto }) =>
@@ -62,12 +60,12 @@ export const MissingProfilePhoto = styled(PeopleTilePhoto)`
 `;
 
 export const MissingProfilePhotoIcon = styled(MissingPhotoIcon)`
-  width: 120px;
-  height: 120px;
+  max-width: 120px;
+  max-height: 120px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    width: 48px;
-    height: 48px;
+    max-width: 48px;
+    max-height: 48px;
   }
 `;
 
