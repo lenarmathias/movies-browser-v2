@@ -5,7 +5,6 @@ import {
     fetchPeopleListLoad,
     selectPeopleList,
     selectStatus,
-    selectTotalPeoplePages,
     selectPeopleListState
 } from "./peopleSlice";
 import {
@@ -21,7 +20,7 @@ export const usePeople = () => {
     const status = useSelector(selectStatus);
     const popularPeople = useSelector(selectPeopleList);
 
-    const totalPages = useSelector(selectTotalPeoplePages);
+    const totalPages = 500;
     const { currentPage } = useSelector(selectPeopleListState);
     const selectedPage = useSelector(selectPage);
 
