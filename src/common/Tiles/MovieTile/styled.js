@@ -42,7 +42,7 @@ export const MoviePoster = styled.img`
 export const MissingMoviePoster = styled.div`
   background-color: ${({ theme }) => theme.color.silver};
   max-width: 360px;
-  max-height: auto;
+  max-height: 70%;
   height: 100%;
   width: 100%;
   max-height: auto;
@@ -52,8 +52,9 @@ export const MissingMoviePoster = styled.div`
   border-radius: 5px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    width: 114px;
-    height: 169px;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 60% 0;
   }
 `;
 
