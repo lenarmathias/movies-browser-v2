@@ -1,5 +1,5 @@
-import { ReactComponent as StarIcon } from "../../images/shape-star.svg";
 import styled, { css } from "styled-components";
+import { ReactComponent as StarIcon } from "../../images/shape-star.svg";
 
 export const Container = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
