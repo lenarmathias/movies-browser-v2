@@ -36,15 +36,6 @@ export const MissingProfilePhoto = styled(PeopleTilePhoto)`
   padding: 50% 0;
   max-height: 339px;
 
-  ${({ $portfolioPhoto }) =>
-    $portfolioPhoto &&
-    css`
-      width: 100%;
-      height: 100%;
-      max-width: 399px;
-      max-height: 564px;
-    `}
-
   @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
     padding: 60% 0;
   }
@@ -52,11 +43,21 @@ export const MissingProfilePhoto = styled(PeopleTilePhoto)`
   ${({ $portfolioPhoto }) =>
     $portfolioPhoto &&
     css`
-    width: auto;
-    height: 100%;
-    max-width: auto;
-    max-height: 163px;
-  `}
+      width: 100%;
+      height: 100%;
+      max-width: 399px;
+      max-height: 564px;
+      min-height: 400px;
+      padding: 0;
+
+      @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        min-height: 300px;
+      }
+
+      @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
+        min-height: 0;
+      }
+    `}
 `;
 
 export const MissingProfilePhotoIcon = styled(MissingPhotoIcon)`
