@@ -97,7 +97,8 @@ export const SmallTile = styled.div`
     ${({ $pageButton }) =>
     $pageButton &&
     css`
-        height: 23px;
+        height: 100%;
+        max-height: 36px;
         padding: 8px 12px;
       `}
   }

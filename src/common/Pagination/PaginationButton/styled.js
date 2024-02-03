@@ -36,8 +36,8 @@ export const PageVectorIcon = styled(VectorIcon)`
     `}
 
     @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}) {
-    width: 5px;
-    height: 8px;
+    max-width: 7px;
+    max-height: 11px;
 
     ${({ $mobileOnly }) =>
         $mobileOnly &&
