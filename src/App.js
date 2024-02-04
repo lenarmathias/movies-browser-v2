@@ -1,4 +1,8 @@
-import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
+import {
+  Routes,
+  Route,
+  Navigate
+} from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import NavigationBar from "./core/NavigationBar";
 import MovieList from "./features/MovieList";
@@ -11,28 +15,35 @@ import { theme } from "./theme";
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <HashRouter>
-        <GlobalStyles />
-        <NavigationBar />
+      <GlobalStyles />
+      <NavigationBar />
 
-        <Switch>
-          <Route path="/people/:personId">
-            <Profile />
-          </Route>
-          <Route path="/movies/:id">
-            <MovieDetails />
-          </Route>
-          <Route path="/people">
-            <People />
-          </Route>
-          <Route path="/movies">
-            <MovieList />
-          </Route>
-          <Route path="/">
-            <Redirect to="/movies" />
-          </Route>
-        </Switch>
-      </HashRouter>
+      <Routes>
+        <Route
+          path="/people/:personId"
+          element={<Profile />}
+        />
+
+        <Route
+          path="/movies/:id"
+          element={<MovieDetails />}
+        />
+
+        <Route
+          path="/people"
+          element={<People />}
+        />
+
+        <Route
+          path="/movies"
+          element={<MovieList />}
+        />
+
+        <Route
+          path="/"
+          element={<Navigate to="/movies" />}
+        />
+      </Routes>
     </ThemeProvider>
   );
 }

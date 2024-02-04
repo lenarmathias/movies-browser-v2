@@ -1,4 +1,4 @@
-import { useHistory, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export const useQueryParameter = (key) => {
   const location = useLocation();
@@ -9,7 +9,7 @@ export const useQueryParameter = (key) => {
 
 export const useReplaceQueryParameter = () => {
   const location = useLocation();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   return (key, value, peopleMatch, moviesMatch) => {
     const searchParams = new URLSearchParams(location.search);
@@ -21,6 +21,6 @@ export const useReplaceQueryParameter = () => {
     }
 
     const newSearch = searchParams.toString();
-    history.push(`/${moviesMatch ? "movies" : peopleMatch}?${newSearch}`);
+    navigate(`/${moviesMatch ? "movies" : peopleMatch}?${newSearch}`);
   };
 };

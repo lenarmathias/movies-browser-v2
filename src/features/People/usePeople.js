@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
     fetchPeopleListLoad,
     selectPeopleList,
@@ -15,7 +15,7 @@ import { useQueryParameter } from "../../common/queryParameter";
 
 export const usePeople = () => {
     const dispatch = useDispatch();
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const status = useSelector(selectStatus);
     const popularPeople = useSelector(selectPeopleList);
@@ -25,14 +25,10 @@ export const usePeople = () => {
     const selectedPage = useSelector(selectPage);
 
     useEffect(() => {
-        const unlisten = history.listen(() => {
+        navigate(() => {
             dispatch(resetPage());
         });
-
-        return () => {
-            unlisten();
-        };
-    }, [dispatch, history]);
+    }, [dispatch, navigate]);
 
     useEffect(() => {
         dispatch(fetchPeopleListLoad({ page: currentPage }));

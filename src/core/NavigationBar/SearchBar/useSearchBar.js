@@ -1,4 +1,4 @@
-import { useRouteMatch } from "react-router-dom";
+import { useMatch } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { searchQueryParamName } from "./searchQueryParamName";
 import {
@@ -9,8 +9,8 @@ import { resetPage } from "../../../common/Pagination/paginationSlice";
 
 export const useSearchBar = () => {
     const dispatch = useDispatch();
-    const moviesMatch = useRouteMatch("/movies");
-    const peopleMatch = useRouteMatch("/people");
+    const moviesMatch = useMatch("/movies");
+    const peopleMatch = useMatch("/people");
     const placeholder = moviesMatch
         ? "Search for movies..."
         : "Search for people...";
